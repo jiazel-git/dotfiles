@@ -1,0 +1,22 @@
+local keyset = vim.keymap.set
+keyset("i", "<C-h>", "<Left>")
+keyset("i", "<C-l>", "<Right>")
+keyset("i", "<C-j>", "<Down>")
+keyset("i", "<C-k>", "<Up>")
+keyset("i", "jj", "<Esc>")
+
+keyset("n", "<C-h>", "<C-w>h")
+keyset("n", "<C-l>", "<C-w>l")
+keyset("n", "<C-j>", "<C-w>j")
+keyset("n", "<C-k>", "<C-w>k")
+keyset("n", "<leader>w", ":w")
+keyset("n", "<leader>q", ":q")
+keyset("n", "<C-n>", ":nohl<CR>")
+
+keyset("n", "gd", vim.lsp.buf.definition, { desc = "Go to Definition" })
+keyset("n", "gD", vim.lsp.buf.declaration, { desc = "Go to Declaration" })
+keyset("n", "gi", vim.lsp.buf.implementation, { desc = "Go to Implementation" })
+keyset("n", "gr", vim.lsp.buf.references, { desc = "References" })
+keyset("n", "K", vim.lsp.buf.hover, { desc = "Hover Documentation" })
+keyset("n", "<C-k>", vim.lsp.buf.signature_help, { desc = "Signature Help" })
+keyset("n", "<space>rn", vim.lsp.buf.rename, { desc = "Rename" })

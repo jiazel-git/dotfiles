@@ -7,6 +7,7 @@ return {
             lua = { "stylua" },
             json = { "prettier" },
             css = { "prettier" },
+            cmake = {"cmakelang"}
         },
 
         format_on_save = {

@@ -10,6 +10,9 @@ return {
                 "stylua",
                 "gopls",
                 "prettier",
+                "cmake-language-server",
+                "cmakelang",
+                "cmakelint",
             },
             ui = {
                 icons = {
@@ -88,6 +91,7 @@ return {
                 lua_ls = require("lsp_utils.lua_ls"),
                 gopls = require("lsp_utils.gopls"),
                 clangd = require("lsp_utils.clangd"),
+                cmake = require("lsp_utils.cmake"),
             },
         },
         config = function(_, opts)

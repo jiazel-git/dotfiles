@@ -5,35 +5,6 @@ vim.g.mapleader = " "
 vim.opt.number = true
 vim.opt.relativenumber = true
 
--- cursor
-
-local function set_cursorline_underline()
-    vim.api.nvim_set_hl(0, "CursorLine", {
-        underline = true,
-        sp = "#ffffff", -- 下划线颜色
-        bg = nil,
-        fg = nil,
-    })
-end
-
-vim.opt.cursorline = true
-set_cursorline_underline()
-
-vim.api.nvim_create_autocmd("InsertEnter", {
-    pattern = "*",
-    callback = function()
-        vim.opt_local.cursorline = false
-    end,
-})
-
-vim.api.nvim_create_autocmd("InsertLeave", {
-    pattern = "*",
-    callback = function()
-        vim.opt_local.cursorline = true
-        set_cursorline_underline()
-    end,
-})
-
 -- Tab
 vim.opt.softtabstop = 4
 vim.opt.shiftwidth = 4

@@ -37,7 +37,11 @@ return {
         popup_border_style = "rounded",
         enable_git_status = true,
         enable_diagnostics = true,
-        open_files_do_not_replace_types = { "terminal", "trouble", "qf" },
+        open_files_do_not_replace_types = {
+            "terminal",
+            "trouble",
+            "qf",
+        },
         open_files_using_relative_paths = true,
         default_component_configs = {
             container = {
@@ -52,7 +56,7 @@ return {
         },
         filesystem = {
             follow_current_file = {
-                enabled = true,
+                enabled = false,
             },
         },
     },

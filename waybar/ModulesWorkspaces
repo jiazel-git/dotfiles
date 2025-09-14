@@ -42,6 +42,7 @@
 		"title<.*vim.*>": " ",
 		"title<.*nvim.*>": " ",
 		"class<jetbrains-idea>": " ",
+                "class<.*obs.*>": " ",
 		}
 	},
 }

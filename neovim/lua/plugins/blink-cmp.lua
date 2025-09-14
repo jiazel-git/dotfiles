@@ -68,6 +68,10 @@ return {
 
             signature = {
                 enabled = true,
+                window = {
+                    scrollbar = false,
+                    border = "rounded",
+                },
             },
 
             cmdline = {

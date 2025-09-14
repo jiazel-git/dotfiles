@@ -88,10 +88,10 @@ return {
                 enabled = true,
             },
             servers = {
-                lua_ls = require("lsp_utils.lua_ls"),
-                gopls = require("lsp_utils.gopls"),
-                clangd = require("lsp_utils.clangd"),
-                cmake = require("lsp_utils.cmake"),
+                lua_ls = require("utils.lsp_utils.lua_ls"),
+                gopls = require("utils.lsp_utils.gopls"),
+                clangd = require("utils.lsp_utils.clangd"),
+                cmake = require("utils.lsp_utils.cmake"),
             },
         },
         config = function(_, opts)
@@ -119,5 +119,17 @@ return {
                 setup(server)
             end
         end,
+        keys = {
+            {
+                "<leader>so",
+                require("utils.functions.func").switch_source_header,
+                desc = "SWitch between source/header",
+            },
+            {
+                "<leader>sh",
+                "<Cmd>ClangdShowSymbolInfo<CR>",
+                desc = "Show symbol info",
+            },
+        },
     },
 }

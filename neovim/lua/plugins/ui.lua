@@ -5,14 +5,17 @@ return {
         event = "VeryLazy",
         opts = {
             poupmenu = {
-                enable = true,
-                backend = "cmp",
+                enable = false,
+                backend = "nui",
             },
             lsp = {
                 override = {
                     ["vim.lsp.util.convert_input_to_markdown_lines"] = true,
                     ["vim.lsp.util.stylize_markdown"] = true,
                     ["com.entry.get_documentation"] = true,
+                },
+                signature = {
+                    enabled = false,
                 },
             },
         },

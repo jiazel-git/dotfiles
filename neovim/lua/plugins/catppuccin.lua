@@ -19,6 +19,10 @@ return {
                     },
                 }
             end,
+            float = {
+                transparent = true, -- enable transparent floating windows
+                solid = true, -- use solid styling for floating windows, see |winborder|
+            },
             integrations = {
                 gitsigns = true,
                 nvimtree = true,

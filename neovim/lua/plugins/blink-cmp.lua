@@ -36,6 +36,10 @@ return {
             completion = {
                 documentation = {
                     auto_show = true,
+                    window = {
+                        winblend = 100,
+                        scrollbar = false,
+                    },
                 },
                 keyword = {
                     range = "prefix",
@@ -69,8 +73,8 @@ return {
             signature = {
                 enabled = true,
                 window = {
-                    scrollbar = false,
-                    border = "rounded",
+                    winblend = 100,
+                    show_documentation = true,
                 },
             },
 
@@ -79,12 +83,6 @@ return {
                     menu = {
                         auto_show = true,
                     },
-                },
-            },
-
-            documentation = {
-                window = {
-                    scrollbar = false,
                 },
             },
         },

@@ -16,7 +16,7 @@ return {
                 title_pos = "center",
                 title = "All Keymaps", -- 自定义标题
                 wo = {
-                    winblend = 100,
+                    winblend = 0,
                 },
             },
             show_help = false,

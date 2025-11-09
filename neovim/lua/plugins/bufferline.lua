@@ -79,6 +79,7 @@ return {
     opts = {
         options = {
             close_command = "bdelete %d",
+            themable = true,
             offsets = {
                 {
                     filetype = "neo-tree",

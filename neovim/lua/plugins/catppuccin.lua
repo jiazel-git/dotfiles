@@ -30,6 +30,10 @@ return {
                 which_key = true,
                 navic = { enabled = true, custom_bg = "" },
                 snacks = true,
+                telescope = {
+                    enabled = true,
+                },
+                lsp_trouble = true,
             },
         },
         config = function(_, opts)

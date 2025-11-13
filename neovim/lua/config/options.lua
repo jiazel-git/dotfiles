@@ -25,6 +25,9 @@ vim.opt.conceallevel = 2
 
 vim.wo.wrap = false
 
+vim.o.splitright = true
+vim.o.splitbelow = true
+
 vim.o.winborder = "rounded"
 
 -- 启用bufferline的event
@@ -40,3 +43,7 @@ vim.o.title = true
 
 -- 自定义标题格式：显示文件名 + nvim
 vim.o.titlestring = "%t - nvim"
+
+-- file encoding
+vim.opt.fileencodings = { "euc-cn", "utf-8", "gbk", "gb2312" }
+vim.opt.encoding = "utf-8"

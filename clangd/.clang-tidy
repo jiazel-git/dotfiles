@@ -1,9 +1,12 @@
 Checks: >
-  clang-analyzer-core.uninitialized*,
-  cppcoreguidelines-init-variables
+  cppcoreguidelines-init-variables,
+  cppcoreguidelines-virtual-class-destructor,
+  readability-delete-null-pointer,
+  readability-else-after-return,
+  readability-magic-numbers
 WarningsAsErrors:             true
 HeaderFileExtensions:         ['', 'h','hh','hpp','hxx']
 ImplementationFileExtensions: ['c','cc','cpp','cxx']
 HeaderFilterRegex:            ''
-FormatStyle:                  none
+FormatStyle:                  file
 InheritParentConfig:          true

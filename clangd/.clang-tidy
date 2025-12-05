@@ -1,0 +1,9 @@
+Checks: >
+  clang-analyzer-core.uninitialized*,
+  cppcoreguidelines-init-variables
+WarningsAsErrors:             true
+HeaderFileExtensions:         ['', 'h','hh','hpp','hxx']
+ImplementationFileExtensions: ['c','cc','cpp','cxx']
+HeaderFilterRegex:            ''
+FormatStyle:                  none
+InheritParentConfig:          true

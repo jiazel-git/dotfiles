@@ -92,6 +92,7 @@ return {
                 gopls = require("utils.lsp_utils.gopls"),
                 clangd = require("utils.lsp_utils.clangd"),
                 cmake = require("utils.lsp_utils.cmake"),
+                ruff = require("utils.lsp_utils.pyright"),
             },
         },
         config = function(_, opts)
@@ -130,6 +131,18 @@ return {
                 "<leader>sh",
                 "<Cmd>ClangdShowSymbolInfo<CR>",
                 desc = "Show symbol info",
+            },
+            {
+                "<leader>ca",
+                function()
+                    local opts = {
+                        context = {
+                            only = { "quickfix" },
+                        },
+                    }
+                    vim.lsp.buf.code_action(opts)
+                end,
+                desc = "Code Action",
             },
         },
     },

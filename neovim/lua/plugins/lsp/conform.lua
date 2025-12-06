@@ -7,7 +7,8 @@ return {
             lua = { "stylua" },
             json = { "prettier" },
             css = { "prettier" },
-            cmake = {"cmakelang"}
+            cmake = { "cmakelang" },
+            python = { "ruff_format" },
         },
 
         format_on_save = {

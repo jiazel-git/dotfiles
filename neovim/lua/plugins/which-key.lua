@@ -7,7 +7,7 @@ return {
             status = {
                 show = false,
             },
-            preset = "helix",
+            preset = "modern",
             win = {
                 no_overlap = false,
                 width = 0.5,

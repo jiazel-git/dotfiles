@@ -47,3 +47,7 @@ vim.o.titlestring = "%t - nvim"
 -- file encoding
 vim.opt.fileencodings = { "euc-cn", "utf-8", "gbk", "gb2312" }
 vim.opt.encoding = "utf-8"
+
+vim.wo.foldmethod = "expr"
+vim.wo.foldexpr = "v:lua.vim.treesitter.foldexpr()"
+vim.wo.foldlevel = 99 -- 默认展开（可按需调整）

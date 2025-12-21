@@ -37,7 +37,6 @@ return {
                 documentation = {
                     auto_show = true,
                     window = {
-                        winblend = 100,
                         scrollbar = false,
                     },
                 },
@@ -73,7 +72,6 @@ return {
             signature = {
                 enabled = true,
                 window = {
-                    winblend = 100,
                     show_documentation = true,
                 },
             },

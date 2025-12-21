@@ -29,7 +29,10 @@ return {
                 noice = true,
                 which_key = true,
                 navic = { enabled = true, custom_bg = "" },
-                snacks = true,
+                snacks = {
+                    enabled = true,
+                    indentscope_color = "lavender",
+                },
                 telescope = {
                     enabled = true,
                 },

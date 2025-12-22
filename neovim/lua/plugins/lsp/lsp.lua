@@ -70,7 +70,6 @@ return {
                             INFO = "⚑",
                             HINT = "»",
                         }
-                        print(diagnostic.severity)
                         return icons[severity_name] or "● "
                     end,
                 },

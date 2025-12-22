@@ -95,6 +95,25 @@ return {
             indicator = {
                 style = "underline",
             },
+            diagnostics = "nvim_lsp",
+            diagnostics_indicator = function(_, _, diagnostics_dict, _)
+                local icons = {
+                    error = "✘",
+                    warning = "▲",
+                    info = "⚑",
+                    hint = "»",
+                }
+                local ret = {}
+                for type, icon in pairs(icons) do
+                    if
+                        diagnostics_dict[type]
+                        and diagnostics_dict[type] > 0
+                    then
+                        table.insert(ret, icon .. diagnostics_dict[type])
+                    end
+                end
+                return ret
+            end,
         },
     },
     config = function(_, opts)

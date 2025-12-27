@@ -93,6 +93,7 @@ return {
                 cmake = require("utils.lsp_utils.cmake"),
                 ruff = require("utils.lsp_utils.pyright"),
                 jsonls = require("utils.lsp_utils.jsonlsp"),
+                tsserver = require("utils.lsp_utils.tsserver"),
             },
         },
         config = function(_, opts)

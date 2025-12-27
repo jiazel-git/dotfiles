@@ -9,6 +9,7 @@ return {
             css = { "prettier" },
             cmake = { "cmakelang" },
             python = { "ruff_format" },
+            typescript = { "prettier" },
         },
 
         format_on_save = {

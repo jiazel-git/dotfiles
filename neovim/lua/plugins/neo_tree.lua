@@ -47,6 +47,10 @@ return {
             container = {
                 enable_character_fade = true,
             },
+            indent = {
+                indent_marker = "┆",
+                last_indent_marker = "╰",
+            },
             file_size = {
                 enabled = false,
             },

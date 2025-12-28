@@ -44,12 +44,7 @@ return {
             picker = {
                 enabled = true,
                 icons = {
-                    diagnostics = {
-                        Error = "✘",
-                        Warn = "▲",
-                        Info = "⚑",
-                        Hint = "»",
-                    },
+                    diagnostics = require("utils.icons.icons").diagnostics_by_name,
                 },
             },
             notifier = { enabled = true, style = "fancy", date_format = "%c" },
@@ -164,77 +159,77 @@ return {
             {
                 "<leader>si",
                 function()
-                    Snacks.picker.icons()
+                    require("snacks.picker").icons()
                 end,
                 desc = "Icons",
             },
             {
                 "<leader>sj",
                 function()
-                    Snacks.picker.jumps()
+                    require("snacks.picker").jumps()
                 end,
                 desc = "Jumps",
             },
             {
                 "<leader>sk",
                 function()
-                    Snacks.picker.keymaps()
+                    require("snacks.picker").keymaps()
                 end,
                 desc = "Keymaps",
             },
             {
                 "<leader>sl",
                 function()
-                    Snacks.picker.loclist()
+                    require("snacks.picker").loclist()
                 end,
                 desc = "Location List",
             },
             {
                 "<leader>sm",
                 function()
-                    Snacks.picker.marks()
+                    require("snacks.picker").marks()
                 end,
                 desc = "Marks",
             },
             {
                 "<leader>sM",
                 function()
-                    Snacks.picker.man()
+                    require("snacks.picker").man()
                 end,
                 desc = "Man Pages",
             },
             {
                 "<leader>sp",
                 function()
-                    Snacks.picker.lazy()
+                    require("snacks.picker").lazy()
                 end,
                 desc = "Search for Plugin Spec",
             },
             {
                 "<leader>sq",
                 function()
-                    Snacks.picker.qflist()
+                    require("snacks.picker").qflist()
                 end,
                 desc = "Quickfix List",
             },
             {
                 "<leader>sR",
                 function()
-                    Snacks.picker.resume()
+                    require("snacks.picker").resume()
                 end,
                 desc = "Resume",
             },
             {
                 "<leader>su",
                 function()
-                    Snacks.picker.undo()
+                    require("snacks.picker").undo()
                 end,
                 desc = "Undo History",
             },
             {
                 "<leader>uC",
                 function()
-                    Snacks.picker.colorschemes()
+                    require("snacks.picker").colorschemes()
                 end,
                 desc = "Colorschemes",
             },
@@ -242,21 +237,21 @@ return {
             {
                 "gd",
                 function()
-                    Snacks.picker.lsp_definitions()
+                    require("snacks.picker").lsp_definitions()
                 end,
                 desc = "Goto Definition",
             },
             {
                 "gD",
                 function()
-                    Snacks.picker.lsp_declarations()
+                    require("snacks.picker").lsp_declarations()
                 end,
                 desc = "Goto Declaration",
             },
             {
                 "gr",
                 function()
-                    Snacks.picker.lsp_references()
+                    require("snacks.picker").lsp_references()
                 end,
                 nowait = true,
                 desc = "References",
@@ -264,42 +259,42 @@ return {
             {
                 "gI",
                 function()
-                    Snacks.picker.lsp_implementations()
+                    require("snacks.picker").lsp_implementations()
                 end,
                 desc = "Goto Implementation",
             },
             {
                 "gy",
                 function()
-                    Snacks.picker.lsp_type_definitions()
+                    require("snacks.picker").lsp_type_definitions()
                 end,
                 desc = "Goto T[y]pe Definition",
             },
             {
                 "gai",
                 function()
-                    Snacks.picker.lsp_incoming_calls()
+                    require("snacks.picker").lsp_incoming_calls()
                 end,
                 desc = "C[a]lls Incoming",
             },
             {
                 "gao",
                 function()
-                    Snacks.picker.lsp_outgoing_calls()
+                    require("snacks.picker").lsp_outgoing_calls()
                 end,
                 desc = "C[a]lls Outgoing",
             },
             {
                 "<leader>ss",
                 function()
-                    Snacks.picker.lsp_symbols()
+                    require("snacks.picker").lsp_symbols()
                 end,
                 desc = "LSP Symbols",
             },
             {
                 "<leader>sS",
                 function()
-                    Snacks.picker.lsp_workspace_symbols()
+                    require("snacks.picker").lsp_workspace_symbols()
                 end,
                 desc = "LSP Workspace Symbols",
             },

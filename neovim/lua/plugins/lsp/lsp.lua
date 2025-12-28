@@ -58,29 +58,14 @@ return {
                     spacing = 4,
                     source = "if_many",
                     prefix = function(diagnostic)
-                        local severity_name = ({
-                            [vim.diagnostic.severity.ERROR] = "ERROR",
-                            [vim.diagnostic.severity.WARN] = "WARN",
-                            [vim.diagnostic.severity.INFO] = "INFO",
-                            [vim.diagnostic.severity.HINT] = "HINT",
-                        })[diagnostic.severity]
-                        local icons = {
-                            ERROR = "✘",
-                            WARN = "▲",
-                            INFO = "⚑",
-                            HINT = "»",
-                        }
-                        return icons[severity_name] or "● "
+                        local icons =
+                            require("utils.icons.icons").diagnostics_by_severity
+                        return icons[diagnostic.severity] or "● "
                     end,
                 },
                 severity_sort = true,
                 signs = {
-                    text = {
-                        ERROR = "✘",
-                        WARN = "▲",
-                        INFO = "⚑",
-                        HINT = "»",
-                    },
+                    text = require("utils.icons.icons").diagnostics_by_severity,
                 },
             },
             inlay_hints = {

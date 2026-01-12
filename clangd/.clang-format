@@ -1,0 +1,77 @@
+# 语言: None, Cpp, Java, JavaScript, ObjC, Proto, TableGen, TextProto
+Language: Cpp
+BasedOnStyle: LLVM
+# 标准: Cpp03, Cpp11, Auto
+Standard: Cpp11
+# 缩进宽度
+IndentWidth: 4
+UseTab: Never
+ColumnLimit:  100
+
+# 访问说明符(public、private等)的偏移
+AccessModifierOffset: -4
+# 开括号后对垂直对齐参数
+AlignAfterOpenBracket: true
+# 连续赋值时,对齐等号
+AlignConsecutiveAssignments: 
+  Enabled: true
+  AcrossEmptyLines: true
+  AcrossComments: false
+# 对齐连续定义的宏
+AlignConsecutiveMacros:
+  Enabled: true
+  AcrossEmptyLines: true
+  AcrossComments: false
+# 对齐注释
+AlignTrailingComments:
+  Kind: Always
+  OverEmptyLines: 2
+# 允许实参在下一行或各自一行
+#AllowAllArgumentsOnNextLine: false
+# 允许形参在下一行或各自一行
+#AllowAllParametersOfDeclarationOnNextLine: true
+# 允许短的控制块单独一行
+AllowShortBlocksOnASingleLine: Empty
+# 允许短的lambda单独一行
+AllowShortLambdasOnASingleLine: Empty
+# 大括号换行风格
+BreakBeforeBraces: Custom
+BraceWrapping:
+  AfterClass: false
+  AfterEnum: true
+  AfterStruct: false
+  SplitEmptyFunction: false
+  AfterControlStatement: Never
+  AfterFunction: false
+  AfterNamespace: true
+  AfterExternBlock: true
+# 返回值后换行
+#BreakAfterReturnType: ExceptShortType
+# 构造函数初始化列表换行风格
+BreakConstructorInitializers: AfterColon
+# 长字符串换行
+BreakStringLiterals: true
+# 模板声明后换行
+#BreakTemplateDeclarations: Yes
+# 指针对齐方式
+PointerAlignment: Left
+# 引用对齐方式
+ReferenceAlignment: Left
+# 排序include
+SortIncludes: true
+# 开圆括号之前添加一个空格: Never, ControlStatements, Always
+SpaceBeforeParens:  ControlStatements
+# 在空的圆括号中添加空格
+SpaceInEmptyParentheses:  false
+# 在尾随的评论前添加的空格数(只适用于//)
+SpacesBeforeTrailingComments: 2
+SpaceBeforeAssignmentOperators: true
+SpaceBeforeCpp11BracedList: true
+SpaceBeforeRangeBasedForLoopColon: true
+# 在尖括号的<后和>前添加空格
+SpacesInAngles: true
+SpacesInContainerLiterals: true
+# 在方括号的[后和]前添加空格，lamda表达式和未指明大小的数组的声明不受影响
+SpacesInSquareBrackets: true
+# 关闭格式化
+DisableFormat:  false

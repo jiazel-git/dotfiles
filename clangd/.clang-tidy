@@ -3,7 +3,9 @@ Checks: >
   cppcoreguidelines-virtual-class-destructor,
   readability-delete-null-pointer,
   readability-else-after-return,
-  readability-magic-numbers
+  readability-magic-numbers,
+  readability-non-const-parameter,
+  bugprone-raw-memory-call-on-non-trivial-type
 WarningsAsErrors:             true
 HeaderFileExtensions:         ['', 'h','hh','hpp','hxx']
 ImplementationFileExtensions: ['c','cc','cpp','cxx']

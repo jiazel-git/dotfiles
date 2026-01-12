@@ -79,6 +79,8 @@ return {
                 ruff = require("utils.lsp_utils.pyright"),
                 jsonls = require("utils.lsp_utils.jsonlsp"),
                 tsserver = require("utils.lsp_utils.tsserver"),
+                rust_analyzer = require("utils.lsp_utils.rust_analyzer"),
+                bash_ls = require("utils.lsp_utils.bashls"),
             },
         },
         config = function(_, opts)

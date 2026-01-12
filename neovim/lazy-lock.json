@@ -25,7 +25,7 @@
   },
   "conform.nvim": {
     "branch": "master",
-    "commit": "5f5152fae39a57e3a04cbce09fb21e10c49c9d95"
+    "commit": "4b713b9da0061a54750bfed457e190459be28c7b"
   },
   "flash.nvim": {
     "branch": "main",
@@ -41,11 +41,11 @@
   },
   "gitsigns.nvim": {
     "branch": "main",
-    "commit": "5813e4878748805f1518cee7abb50fd7205a3a48"
+    "commit": "130beacf8a51f00aede9c31064c749136679a321"
   },
   "inlay-hints.nvim": {
     "branch": "master",
-    "commit": "ef58e190e74b3d2ff1f5bbcc20a4f9a95f9ffabb"
+    "commit": "12c48937702906f67dfbd7f64b1c0d8861635506"
   },
   "lazy.nvim": {
     "branch": "main",
@@ -89,15 +89,15 @@
   },
   "nvim-dap": {
     "branch": "master",
-    "commit": "5860c7c501eb428d3137ee22c522828d20cca0b3"
+    "commit": "818cd8787a77a97703eb1d9090543a374f79a9ac"
   },
   "nvim-lspconfig": {
     "branch": "master",
-    "commit": "d20d83b3f24f5884da73a9fc92fdc47e778b8d0d"
+    "commit": "41ceb6bba3a40128b7841f5b7f5a9dae7201e823"
   },
   "nvim-navic": {
     "branch": "master",
-    "commit": "7d914a39a1ef8f4e22c2c4381abeef7c556f5a13"
+    "commit": "f5eba192f39b453675d115351808bd51276d9de5"
   },
   "nvim-notify": {
     "branch": "master",

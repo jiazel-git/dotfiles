@@ -10,6 +10,8 @@ return {
             cmake = { "cmakelang" },
             python = { "ruff_format" },
             typescript = { "prettier" },
+            rust = { "rustfmt" },
+            bash = { "shfmt" },
         },
 
         format_on_save = {

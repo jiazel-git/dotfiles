@@ -17,6 +17,7 @@ return {
             topdelete = { text = "" },
             changedelete = { text = "▎" },
         },
+        current_line_blame = true,
         on_attach = function(buffer)
             local gs = package.loaded.gitsigns
 
@@ -47,6 +48,7 @@ return {
       map("n", "<leader>ghu", gs.undo_stage_hunk, "undo stage hunk")
       map("n", "<leader>ghR", gs.reset_buffer, "reset buffer")
       map("n", "<leader>ghp", gs.preview_hunk_inline, "preview hunk inline")
+      map("n", "<leader>ghP", gs.preview_hunk, "preview hunk")
       map("n", "<leader>ghb", function() gs.blame_line({ full = true }) end, "blame line")
       map("n", "<leader>ghB", function() gs.blame() end, "blame buffer")
       map("n", "<leader>ghd", gs.diffthis, "diff this")

@@ -463,6 +463,7 @@ ins_right({
             dockerls = "docker",
             sqlls = "sql",
             yamlls = "yml",
+            cmake = "cmake",
         }
         for _, client in ipairs(clients) do
             local filetypes = client.config.filetypes

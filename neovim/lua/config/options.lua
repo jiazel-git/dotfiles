@@ -45,7 +45,7 @@ vim.o.title = true
 vim.o.titlestring = "%t - nvim"
 
 -- file encoding
-vim.opt.fileencodings = { "euc-cn", "utf-8", "gbk", "gb2312" }
+vim.opt.fileencodings = { "utf-8", "gbk", "gb2312" }
 vim.opt.encoding = "utf-8"
 
 vim.wo.foldmethod = "expr"

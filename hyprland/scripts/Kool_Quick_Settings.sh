@@ -4,7 +4,7 @@
 # Updated for UserConfigs/configs separation
 
 # Modify this config file for default terminal and EDITOR
-config_file="$HOME/.config/hypr/UserConfigs/01-UserDefaults.conf"
+config_file="$HOME/.config/hypr/configs/01_defaults.conf"
 
 tmp_config_file=$(mktemp)
 sed 's/^\$//g; s/ = /=/g' "$config_file" > "$tmp_config_file"
@@ -13,7 +13,7 @@ source "$tmp_config_file"
 
 # variables
 configs="$HOME/.config/hypr/configs"
-UserConfigs="$HOME/.config/hypr/UserConfigs"
+UserConfigs="$HOME/.config/hypr/configs"
 rofi_theme="$HOME/.config/rofi/config-edit.rasi"
 msg=' ⁉️ Choose what to do ⁉️'
 iDIR="$HOME/.config/swaync/images"
@@ -65,19 +65,19 @@ main() {
     
     # Map choices to corresponding files
     case "$choice" in
-    	"Edit User Defaults") file="$UserConfigs/01-UserDefaults.conf" ;;
-        "Edit User ENV variables") file="$UserConfigs/ENVariables.conf" ;;
-        "Edit User Keybinds") file="$UserConfigs/UserKeybinds.conf" ;;
-        "Edit User Startup Apps (overlay)") file="$UserConfigs/Startup_Apps.conf" ;;
-        "Edit User Window Rules (overlay)") file="$UserConfigs/WindowRules.conf" ;;
-        "Edit User Settings") file="$configs/SystemSettings.conf"; show_info "Editing default settings. Copy to UserConfigs/UserSettings.conf to override." ;;
-        "Edit User Decorations") file="$UserConfigs/UserDecorations.conf" ;;
-        "Edit User Animations") file="$UserConfigs/UserAnimations.conf" ;;
-        "Edit User Laptop Settings") file="$UserConfigs/Laptops.conf" ;;
-        "Edit System Default Keybinds") file="$configs/Keybinds.conf" ;;
-        "Edit System Default Startup Apps") file="$configs/Startup_Apps.conf" ;;
-        "Edit System Default Window Rules") file="$configs/WindowRules.conf" ;;
-        "Edit System Default Settings") file="$configs/SystemSettings.conf" ;;
+    	"Edit User Defaults") file="$UserConfigs/01_defaults.conf" ;;
+        "Edit User ENV variables") file="$UserConfigs/en_variables.conf" ;;
+        "Edit User Keybinds") file="$UserConfigs/custom_keybinds.conf" ;;
+        "Edit User Startup Apps (overlay)") file="$UserConfigs/startup_apps.conf" ;;
+        "Edit User Window Rules (overlay)") file="$UserConfigs/window_rules.conf" ;;
+        "Edit User Settings") file="$configs/system_settings.conf"; show_info "Editing default settings. Copy to UserConfigs/UserSettings.conf to override." ;;
+        "Edit User Decorations") file="$UserConfigs/decorations.conf" ;;
+        "Edit User Animations") file="$UserConfigs/animations.conf" ;;
+        "Edit User Laptop Settings") file="$UserConfigs/laptops.conf" ;;
+        "Edit System Default Keybinds") file="$configs/keybinds.conf" ;;
+        "Edit System Default Startup Apps") file="$configs/startup_apps.conf" ;;
+        "Edit System Default Window Rules") file="$configs/window_rules.conf" ;;
+        "Edit System Default Settings") file="$configs/system_settings.conf" ;;
         "Choose Kitty Terminal Theme") $scriptsDir/Kitty_themes.sh ;;
         "Configure Monitors (nwg-displays)") 
             if ! command -v nwg-displays &>/dev/null; then

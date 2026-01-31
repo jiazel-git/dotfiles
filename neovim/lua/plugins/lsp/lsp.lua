@@ -8,14 +8,19 @@ return {
         opts = {
             ensure_installed = {
                 "lua-language-server",
-                "html-lsp",
-                "pyright",
                 "stylua",
                 "gopls",
-                "prettier",
+                "clangd",
                 "cmake-language-server",
                 "cmakelang",
                 "cmakelint",
+                "ruff",
+                "json-lsp",
+                "typescript-language-server",
+                "rust-analyzer",
+                "bash-language-server",
+                "shfmt",
+                "prettier",
             },
             ui = {
                 icons = {

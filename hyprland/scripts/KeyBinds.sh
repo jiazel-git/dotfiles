@@ -12,13 +12,12 @@ fi
 
 # define the config files
 keybinds_conf="$HOME/.config/hypr/configs/keybinds.conf"
-user_keybinds_conf="$HOME/.config/hypr/configs/custom_keybinds.conf"
 laptop_conf="$HOME/.config/hypr/configs/laptops.conf"
 rofi_theme="$HOME/.config/rofi/config-keybinds.rasi"
 msg='☣️ NOTE ☣️: Clicking with Mouse or Pressing ENTER will have NO function'
 
 # collect raw bind lines (strip end-of-line comments) from available files
-files=("$keybinds_conf" "$user_keybinds_conf")
+files=("$keybinds_conf")
 [[ -f "$laptop_conf" ]] && files+=("$laptop_conf")
 
 # Parse binds/unbinds from files, detect overrides, and keep unique effective binds

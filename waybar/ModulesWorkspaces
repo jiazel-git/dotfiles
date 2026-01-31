@@ -31,7 +31,7 @@
 			"class<zen>": "󰰷 ",
 			"class<waterfox|waterfox-bin>": " ",
 			"class<microsoft-edge>": " ",
-			"class<Chromium|Thorium|[Cc]hrome>": " ",
+			"class<Chromium|Thorium|[Cc]hrome|[Gg]oogle-[Cc]hrome>": " ",
 			"class<brave-browser>": "🦁 ",
 			"class<tor browser>": " ",
 			"class<firefox-developer-edition>": "🦊 ",
@@ -48,7 +48,7 @@
 			"class<[Ss]ignal|signal-desktop|org.signal.Signal>": "󰍩 ",
 			"title<.*Signal.*>": "󰍩 ",
 			"title<.*whatsapp.*>": " ",
-			"title<.*zapzap.*>": " ",
+			"title<.*zapzap.*|Meeting>": " ",
 			"title<.*messenger.*>": " ",
 			"title<.*facebook.*>": " ",
 			"title<.*Discord.*>": " ",
@@ -120,7 +120,8 @@
 			"title<Documentation Viewer>": " ",
 			"title<^Wallpapers$>": " ",
 			"title<^Video Wallpapers$>": " ",
-			"title<^qs-wlogout$>": " "
+			"title<^qs-wlogout$>": " ",
+			"class<Bytedance-feishu>": ""
 		}
 	}
 }

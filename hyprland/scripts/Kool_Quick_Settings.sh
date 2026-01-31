@@ -30,7 +30,6 @@ menu() {
     cat <<EOF
 --- USER CUSTOMIZATIONS ---
 Edit User Defaults
-Edit User Keybinds
 Edit User ENV variables
 Edit User Startup Apps (overlay)
 Edit User Window Rules (overlay)
@@ -67,7 +66,6 @@ main() {
     case "$choice" in
     	"Edit User Defaults") file="$UserConfigs/01_defaults.conf" ;;
         "Edit User ENV variables") file="$UserConfigs/en_variables.conf" ;;
-        "Edit User Keybinds") file="$UserConfigs/custom_keybinds.conf" ;;
         "Edit User Startup Apps (overlay)") file="$UserConfigs/startup_apps.conf" ;;
         "Edit User Window Rules (overlay)") file="$UserConfigs/window_rules.conf" ;;
         "Edit User Settings") file="$configs/system_settings.conf"; show_info "Editing default settings. Copy to UserConfigs/UserSettings.conf to override." ;;

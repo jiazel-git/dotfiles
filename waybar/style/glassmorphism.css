@@ -1,0 +1,304 @@
+/* Glassmorphism Waybar Theme */
+
+@define-color bar-bg rgba(0, 0, 0, 0);
+@define-color glass-bg rgba(30, 30, 46, 0.6);
+@define-color glass-border rgba(180, 190, 254, 0.3);
+@define-color main-fg #cdd6f4;
+@define-color accent #b4befe;
+@define-color accent-alt #f5c2e7;
+@define-color hover-bg rgba(180, 190, 254, 0.2);
+@define-color active-bg rgba(180, 190, 254, 0.4);
+
+* {
+  border: none;
+  border-radius: 0px;
+  font-family: "JetBrainsMono Nerd Font";
+  font-weight: bold;
+  min-height: 0;
+  font-size: 97%;
+  font-feature-settings: '"zero", "ss01", "ss02", "ss03", "ss04", "ss05", "cv31"';
+  transition: all 0.3s ease;
+}
+
+window#waybar {
+  background: @bar-bg;
+}
+
+tooltip {
+  background: @glass-bg;
+  color: @main-fg;
+  border-radius: 12px;
+  border: 1px solid @glass-border;
+}
+
+/* Workspaces */
+#workspaces {
+  background: @glass-bg;
+  border-radius: 20px;
+  border: 1px solid @glass-border;
+  padding: 0px 4px;
+  margin: 2px 3px;
+}
+
+#taskbar button,
+#workspaces button {
+  box-shadow: none;
+  text-shadow: none;
+  padding: 2px 6px;
+  border-radius: 14px;
+  margin: 1px;
+  color: @main-fg;
+  background: transparent;
+}
+
+#taskbar button.active,
+#workspaces button.active {
+  background: @active-bg;
+  color: @accent;
+  border-radius: 14px;
+  padding: 2px 8px;
+}
+
+#taskbar button:hover,
+#workspaces button:hover {
+  background: @hover-bg;
+  color: @accent-alt;
+}
+
+/* Tray menu */
+#tray menu * {
+  min-height: 18px;
+}
+
+#tray menu separator {
+  min-height: 16px;
+}
+
+/* Common module styling - glass effect */
+#backlight,
+#backlight-slider,
+#battery,
+#bluetooth,
+#clock,
+#cpu,
+#disk,
+#idle_inhibitor,
+#keyboard-state,
+#memory,
+#mode,
+#network,
+#power-profiles-daemon,
+#pulseaudio,
+#pulseaudio-slider,
+#taskbar,
+#temperature,
+#tray,
+#window,
+#wireplumber,
+#custom-backlight,
+#custom-browser,
+#custom-cava_mviz,
+#custom-cycle_wall,
+#custom-dot_update,
+#custom-file_manager,
+#custom-keybinds,
+#custom-keyboard,
+#custom-light_dark,
+#custom-lock,
+#custom-hint,
+#custom-hypridle,
+#custom-menu,
+#custom-playerctl,
+#custom-power_vertical,
+#custom-power,
+#custom-quit,
+#custom-reboot,
+#custom-settings,
+#custom-spotify,
+#custom-swaync,
+#custom-tty,
+#custom-updater,
+#custom-hyprpicker,
+#custom-nightlight,
+#custom-weather {
+  color: @main-fg;
+  background: @glass-bg;
+  border: 1px solid @glass-border;
+  border-radius: 18px;
+  margin: 2px 1px;
+  padding: 0px 6px;
+}
+
+/* Clock - accent styling */
+#clock {
+  color: @accent-alt;
+  background: @glass-bg;
+  border: 1px solid rgba(245, 194, 231, 0.3);
+  padding: 0px 8px;
+}
+
+/* Window title */
+#window {
+  color: @main-fg;
+  background: @glass-bg;
+  border: 1px solid @glass-border;
+  padding: 0px 8px;
+}
+
+/* Tray */
+#tray {
+  background: @glass-bg;
+  border: 1px solid @glass-border;
+  padding: 0px 6px;
+}
+
+#tray > .active,
+#tray > .passive,
+#tray menu {
+  color: @accent;
+}
+
+/* Network */
+#network {
+  color: #89dceb;
+}
+
+/* Temperature */
+#temperature {
+  color: #a6e3a1;
+}
+
+#temperature.critical {
+  color: #f38ba8;
+  background: rgba(243, 139, 168, 0.2);
+}
+
+/* CPU, Memory, Disk */
+#cpu {
+  color: #fab387;
+}
+
+#memory {
+  color: #f9e2af;
+}
+
+#disk {
+  color: #94e2d5;
+}
+
+/* Battery */
+#battery {
+  color: #a6e3a1;
+}
+
+#battery.charging {
+  color: #a6e3a1;
+}
+
+#battery.warning:not(.charging) {
+  color: #f9e2af;
+}
+
+#battery.critical:not(.charging) {
+  color: #f38ba8;
+  animation: blink 0.5s linear infinite alternate;
+}
+
+@keyframes blink {
+  to {
+    color: #1e1e2e;
+    background: #f38ba8;
+  }
+}
+
+/* Pulseaudio */
+#pulseaudio {
+  color: #f5c2e7;
+}
+
+#pulseaudio.muted {
+  color: #6c7086;
+}
+
+/* Backlight */
+#backlight {
+  color: #f9e2af;
+}
+
+/* Idle inhibitor */
+#idle_inhibitor {
+  color: #6c7086;
+}
+
+#idle_inhibitor.activated {
+  color: #a6e3a1;
+}
+
+/* Power button */
+#custom-power {
+  color: #f38ba8;
+  padding: 0px 8px;
+}
+
+#custom-power:hover {
+  background: rgba(243, 139, 168, 0.3);
+}
+
+/* Weather */
+#custom-weather {
+  color: #89b4fa;
+}
+
+/* Menu */
+#custom-menu {
+  color: #cba6f7;
+  padding: 0px 8px;
+}
+
+/* Notification */
+#custom-swaync {
+  color: #f9e2af;
+}
+
+/* Player control */
+#custom-playerctl {
+  color: #a6e3a1;
+}
+
+/* Cava visualizer */
+#custom-cava_mviz {
+  color: @accent;
+}
+
+/* Hint */
+#custom-hint {
+  color: #89dceb;
+}
+
+/* Separator styling */
+#custom-separator {
+  color: @glass-border;
+  background: transparent;
+  border: none;
+  padding: 0px 4px;
+}
+
+/* Groups - container styling */
+.modules-left,
+.modules-center,
+.modules-right {
+  padding: 0px 2px;
+}
+
+/* Hover effects for all interactive modules */
+#custom-power:hover,
+#custom-menu:hover,
+#custom-swaync:hover,
+#idle_inhibitor:hover,
+#pulseaudio:hover,
+#network:hover,
+#battery:hover,
+#clock:hover {
+  background: @hover-bg;
+  border-color: @accent;
+}

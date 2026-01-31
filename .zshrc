@@ -33,10 +33,16 @@ alias lt='ls --tree'
 # Set-up FZF key bindings (CTRL R for fuzzy history finder)
 source <(fzf --zsh)
 
+export https_proxy="http://127.0.0.1:7897" 
+export http_proxy="http://127.0.0.1:7897" 
+export all_proxy="socks5://127.0.0.1:7897"
+
 #npm bin
 NPM='/home/carbon/.npm-global/bin'
-
-export PATH="$NPM:$PATH"
+# pyenv root
+PYENV_ROOT="$HOME/.pyenv"
+export PATH="$PYENV_ROOT/bin:$NPM:$PATH"
+eval "$(pyenv init -)"
 
 HISTFILE=~/.zsh_history
 HISTSIZE=10000

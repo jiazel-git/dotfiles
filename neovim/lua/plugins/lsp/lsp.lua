@@ -2,6 +2,8 @@ return {
     -- mason
     {
         "williamboman/mason.nvim",
+        event = { "BufReadPre", "BufNewFile" },
+        cmd = "Mason",
         dependencies = {
             "williamboman/mason-lspconfig.nvim",
         },
@@ -53,6 +55,7 @@ return {
     -- lspconfig
     {
         "neovim/nvim-lspconfig",
+        event = { "BufReadPre", "BufNewFile" },
         dependencies = {
             "saghen/blink.cmp",
             { "MysticalDevil/inlay-hints.nvim", event = "LspAttach" },
@@ -67,28 +70,28 @@ return {
                     source = "if_many",
                     prefix = function(diagnostic)
                         local icons =
-                            require("utils.icons.icons").diagnostics_by_severity
+                            require("utils.icons").diagnostics_by_severity
                         return icons[diagnostic.severity] or "● "
                     end,
                 },
                 severity_sort = true,
                 signs = {
-                    text = require("utils.icons.icons").diagnostics_by_severity,
+                    text = require("utils.icons").diagnostics_by_severity,
                 },
             },
             inlay_hints = {
                 enabled = true,
             },
             servers = {
-                lua_ls = require("utils.lsp_utils.lua_ls"),
-                gopls = require("utils.lsp_utils.gopls"),
-                clangd = require("utils.lsp_utils.clangd"),
-                cmake = require("utils.lsp_utils.cmake"),
-                ruff = require("utils.lsp_utils.pyright"),
-                jsonls = require("utils.lsp_utils.jsonlsp"),
-                tsserver = require("utils.lsp_utils.tsserver"),
-                rust_analyzer = require("utils.lsp_utils.rust_analyzer"),
-                bash_ls = require("utils.lsp_utils.bashls"),
+                lua_ls = require("lsp.servers.lua_ls"),
+                gopls = require("lsp.servers.gopls"),
+                clangd = require("lsp.servers.clangd"),
+                cmake = require("lsp.servers.cmake"),
+                ruff = require("lsp.servers.pyright"),
+                jsonls = require("lsp.servers.jsonlsp"),
+                tsserver = require("lsp.servers.tsserver"),
+                rust_analyzer = require("lsp.servers.rust_analyzer"),
+                bash_ls = require("lsp.servers.bashls"),
             },
         },
         config = function(_, opts)
@@ -117,29 +120,6 @@ return {
                 setup(server)
             end
         end,
-        keys = {
-            {
-                "<leader>so",
-                require("utils.functions.func").switch_source_header,
-                desc = "SWitch between source/header",
-            },
-            {
-                "<leader>sh",
-                "<Cmd>ClangdShowSymbolInfo<CR>",
-                desc = "Show symbol info",
-            },
-            {
-                "<leader>ca",
-                function()
-                    local opts = {
-                        context = {
-                            only = { "quickfix" },
-                        },
-                    }
-                    vim.lsp.buf.code_action(opts)
-                end,
-                desc = "Code Action",
-            },
-        },
+        keys = require("keymaps.lsp").lsp,
     },
 }

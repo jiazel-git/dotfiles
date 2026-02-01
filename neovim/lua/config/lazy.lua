@@ -1,3 +1,4 @@
+---@diagnostic disable: undefined-global
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 if not (vim.uv or vim.loop).fs_stat(lazypath) then
     local lazyrepo = "https://github.com/folke/lazy.nvim.git"
@@ -25,9 +26,13 @@ require("lazy").setup({
     spec = {
         { import = "plugins" },
         { import = "plugins.colorscheme" },
-        { import = "plugins.ai" },
+        --{ import = "plugins.ai" },
         { import = "plugins.ui" },
         { import = "plugins.lsp" },
+        { import = "plugins.editor" },
+        { import = "plugins.tools" },
+        { import = "plugins.git" },
+        { import = "plugins.nav" },
     },
     defaults = {
         lazy = false,

@@ -14,7 +14,7 @@ return {
                 col = 0.5,
                 row = 0.5,
                 title_pos = "center",
-                title = "All Keymaps", -- 自定义标题
+                title = "All Keymaps",
                 wo = {
                     winblend = 0,
                 },
@@ -23,6 +23,7 @@ return {
             show_keys = false,
             spec = {
                 { "<leader><tab>", group = "tabs" },
+                { "<leader>b", group = "buffer" },
                 { "<leader>c", group = "code" },
                 { "<leader>d", group = "debug" },
                 { "<leader>dp", group = "profiler" },
@@ -31,6 +32,7 @@ return {
                 { "<leader>gh", group = "hunks" },
                 { "<leader>q", group = "quit/session" },
                 { "<leader>s", group = "search" },
+                { "<leader>t", group = "terminal" },
                 {
                     "<leader>u",
                     group = "ui",
@@ -51,8 +53,6 @@ return {
                 return not node.desc
             end,
         },
-        keys = {
-            { "?", "<cmd>WhichKey<cr>", "show all Keymaps" },
-        },
+        keys = require("keymaps.ui").whichkey,
     },
 }

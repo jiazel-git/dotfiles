@@ -3,7 +3,7 @@ return {
     version = "*",
     opts = {
         size = 13,
-        open_mapping = [[<C-\\>]],
+        open_mapping = [[<C-\>]],
         hide_numbers = true,
         shade_filetypes = {},
         shade_terminals = true,
@@ -23,22 +23,5 @@ return {
             },
         },
     },
-    keys = {
-        { "<C-\\>", "<cmd>ToggleTerm<cr>", desc = "Toggle Terminal" },
-        {
-            "<leader>tf",
-            "<cmd>ToggleTerm direction=float<cr>",
-            desc = "Float Terminal",
-        },
-        {
-            "<leader>th",
-            "<cmd>ToggleTerm size=10 direction=horizontal<cr>",
-            desc = "Horizontal Terminal",
-        },
-        {
-            "<leader>tv",
-            "<cmd>ToggleTerm size=80 direction=vertical<cr>",
-            desc = "Vertical Terminal",
-        },
-    },
+    keys = require("keymaps.terminal").toggleterm,
 }

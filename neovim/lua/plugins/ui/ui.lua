@@ -1,5 +1,5 @@
 return {
-    -- notice
+    -- noice
     {
         "folke/noice.nvim",
         event = "VeryLazy",
@@ -19,24 +19,9 @@ return {
                 },
             },
         },
-        keys = {
-            {
-                "<leader>sN",
-                "<CMD>Notice pick<CR>",
-                desc = "[Notice] pick history messages",
-            },
-            {
-                "<leader>N",
-                "<CMD>Notice<CR>",
-                desc = "[Notice] Show history messages",
-            },
-        },
+        keys = require("keymaps.ui").noice,
         dependencies = {
-            -- if you lazy-load any plugin below, make sure to add proper `module="..."` entries
             "MunifTanjim/nui.nvim",
-            -- OPTIONAL:
-            --   `nvim-notify` is only needed, if you want to use the notification view.
-            --   If not available, we use `mini` as the fallback
             "rcarriga/nvim-notify",
         },
         presets = {
@@ -60,7 +45,7 @@ return {
     -- lazydev
     {
         "folke/lazydev.nvim",
-        ft = "lua", -- only load on lua files
+        ft = "lua",
         opts = {
             library = {
                 { path = "${3rd}/luv/library", words = { "vim%.uv" } },

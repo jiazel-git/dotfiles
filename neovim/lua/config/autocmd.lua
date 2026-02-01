@@ -1,23 +1,29 @@
--- ×Ô¶¯¼ì²âÎÄ¼şÄÚÈİ²¢ÉèÖÃ filetype
+-- è‡ªåŠ¨æ£€æµ‹æ— æ‰©å±•åæ–‡ä»¶çš„ filetype
+--- @diagnostic disable
 vim.api.nvim_create_autocmd({ "BufRead", "BufNewFile" }, {
-    pattern = "*", -- ¶ÔËùÓĞÎÄ¼şÉúĞ§
+    pattern = "*",
     callback = function()
-        -- Ö»¶ÔÉĞÎ´ÉèÖÃ filetype µÄÎÄ¼ş´¦Àí£¨±ÜÃâ¸²¸Ç£©
+        -- å·²æœ‰ filetype ç›´æ¥è·³è¿‡
         if vim.bo.filetype ~= "" then
             return
         end
 
-        -- ¶ÁÈ¡ÎÄ¼şÇ° 10 ĞĞ
-        local lines = vim.api.nvim_buf_get_lines(0, 0, 10, false)
+        -- è¯»å–å‰ 20 è¡Œï¼Œè·³è¿‡æ³¨é‡Šæ‰¾ç¬¬ä¸€è¡Œæœ‰æ•ˆå†…å®¹
+        local lines = vim.api.nvim_buf_get_lines(0, 0, 20, false)
         for _, line in ipairs(lines) do
-            -- È¥³ıÇ°ºó¿Õ°×
             local trimmed = line:match("^%s*(.-)%s*$")
-            if trimmed ~= "" then
-                -- Èç¹ûÒÔ { »ò [ ¿ªÍ·£¬ºÜ¿ÉÄÜÊÇ JSON
-                if trimmed:match("^[{[]") then
+            -- è·³è¿‡ç©ºè¡Œå’Œæ³¨é‡Š
+            if
+                trimmed ~= ""
+                and not trimmed:match("^//")
+                and not trimmed:match("^#")
+                and not trimmed:match("^/%*")
+            then
+                -- ä»¥ { æˆ– [ å¼€å¤´å¯èƒ½æ˜¯ JSON
+                if trimmed:match("^[{%[]") then
                     vim.bo.filetype = "jsonc"
                 end
-                break -- Ö»¼ì²éµÚÒ»ĞĞ·Ç¿ÕÄÚÈİ
+                return
             end
         end
     end,

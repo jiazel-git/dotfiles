@@ -51,5 +51,16 @@ data_format = ascii
 ascii_max_range = 7
 EOF
 
-# Stream cava output and translate digits 0..7 to bar glyphs
-exec cava -p "$config_file" | sed -u "$dict"
+# Stream cava output and translate digits 0..7 to bar glyphs, then colorize with rainbow
+cava -p "$config_file" | sed -u "$dict" | awk '{
+  colors[0]="#f38ba8"; colors[1]="#fab387"; colors[2]="#f9e2af"; colors[3]="#a6e3a1";
+  colors[4]="#89dceb"; colors[5]="#89b4fa"; colors[6]="#cba6f7"; colors[7]="#f5c2e7";
+  colors[8]="#94e2d5"; colors[9]="#eba0ac";
+  n=split($0,chars,"");
+  out="";
+  for(i=1;i<=n;i++) {
+    out=out "<span foreground=\047" colors[(i-1)%10] "\047>" chars[i] "</span>";
+  }
+  print out;
+  fflush();
+}'

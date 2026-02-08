@@ -62,8 +62,35 @@ function M.setup()
             },
         },
         sections = {
-            lualine_a = { { mode_name } },
+            lualine_a = {
+                { mode_name },
+            },
             lualine_b = {
+                {
+                    function()
+                        return ""
+                    end,
+                    color = { fg = colors.LAVENDER },
+                    padding = { left = 0, right = 0 },
+                },
+                {
+                    function()
+                        return vim.fn.fnamemodify(vim.fn.getcwd(), ":t")
+                    end,
+                    icon = "",
+                    color = {
+                        fg = colors.BASE,
+                        bg = colors.LAVENDER,
+                        gui = "bold",
+                    },
+                },
+                {
+                    function()
+                        return ""
+                    end,
+                    color = { fg = colors.LAVENDER },
+                    padding = { left = 0, right = 1 },
+                },
                 { "branch", icon = "" },
                 {
                     "diff",
@@ -137,17 +164,42 @@ function M.setup()
             lualine_x = {
                 {
                     function()
-                        local clients = vim.lsp.get_clients({ bufnr = 0 })
-                        if #clients == 0 then
-                            return ""
+                        local msg = "no active lsp"
+                        local buf_ft = vim.bo.filetype
+                        local clients = vim.lsp.get_clients()
+                        if next(clients) == nil then
+                            return msg
                         end
-                        local names = {}
-                        for _, c in ipairs(clients) do
-                            table.insert(names, c.name)
+                        local lsp_short_names = {
+                            pyright = "py",
+                            tsserver = "ts",
+                            rust_analyzer = "rs",
+                            lua_ls = "lua",
+                            clangd = "clangd",
+                            bashls = "sh",
+                            jsonls = "json",
+                            html = "html",
+                            cssls = "css",
+                            tailwindcss = "tw",
+                            dockerls = "docker",
+                            sqlls = "sql",
+                            yamlls = "yml",
+                            cmake = "cmake",
+                        }
+                        for _, client in ipairs(clients) do
+                            local filetypes = client.config.filetypes
+                            if
+                                filetypes
+                                and vim.fn.index(filetypes, buf_ft) ~= -1
+                            then
+                                return lsp_short_names[client.name]
+                                    or client.name:sub(1, 2)
+                            end
                         end
-                        return "  " .. table.concat(names, " ")
+                        return msg
                     end,
-                    color = { fg = colors.SKY },
+                    icon = " ",
+                    color = { fg = colors.SKY, gui = "bold" },
                 },
                 { "encoding" },
                 {

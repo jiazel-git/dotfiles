@@ -1,20 +1,17 @@
-return {
-    -- snacks
-    {
-        "folke/snacks.nvim",
-        priority = 1000,
-        lazy = false,
-        opts = {
-            animate = {
-                duration = 20,
-                easing = "linear",
-                fps = 120,
-            },
-            bigfile = { enabled = true },
-            dashboard = {
-                enabled = true,
-                preset = {
-                    header = [[
+local _Opts = {}
+
+_Opts.animate = {
+    duration = 20,
+    easing = "linear",
+    fps = 120,
+}
+
+_Opts.bigfile = { enabled = true }
+
+_Opts.dashboard = {
+    enabled = true,
+    preset = {
+        header = [[
             ⢀⣴⡾⠃⠄⠄⠄⠄⠄⠈⠺⠟⠛⠛⠛⠛⠻⢿⣿⣿⣿⣿⣶⣤⡀
           ⢀⣴⣿⡿⠁⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⣸⣿⣿⣿⣿⣿⣿⣿⣷
          ⣴⣿⡿⡟⡼⢹⣷⢲⡶⣖⣾⣶⢄⠄⠄⠄⠄⠄⢀⣼⣿⢿⣿⣿⣿⣿⣿⣿⣿
@@ -31,29 +28,46 @@ return {
       ⣰⡗⠹⣿⣄⠄⠄⠄⢀⣿⣿⣿⣿⣿⣿⠟⣅⣥⣿⣿⣿⣿⠿⠋  ⣾⡌⢠⣿⡿⠃
      ⠜⠋⢠⣷⢻⣿⣿⣶⣾⣿⣿⣿⣿⠿⣛⣥⣾⣿⠿⠟⠛⠉
     ]],
-                },
-            },
-            explorer = { enabled = false },
-            indent = {
-                enabled = true,
-                chunk = {
-                    enabled = true,
-                },
-            },
-            input = { enabled = true },
-            picker = {
-                enabled = true,
-                icons = {
-                    diagnostics = require("utils.icons").diagnostics_by_name,
-                },
-            },
-            notifier = { enabled = true, style = "fancy", date_format = "%c" },
-            quickfile = { enabled = true },
-            scope = { enabled = true },
-            scroll = { enabled = true },
-            statuscolumn = { enabled = true },
-            words = { enabled = true },
-        },
+    },
+}
+
+_Opts.explorer = { enabled = false }
+
+_Opts.indent = {
+    enabled = true,
+    chunk = {
+        enabled = true,
+    },
+}
+
+_Opts.input = { enabled = true }
+
+_Opts.picker = {
+    enabled = true,
+    icons = {
+        diagnostics = require("utils.icons").diagnostics_by_name,
+    },
+}
+
+_Opts.notifier = { enabled = true, style = "fancy", date_format = "%c" }
+
+_Opts.quickfile = { enabled = true }
+
+_Opts.scope = { enabled = true }
+
+_Opts.scroll = { enabled = true }
+
+_Opts.statuscolumn = { enabled = true }
+
+_Opts.words = { enabled = true }
+
+return {
+    -- snacks
+    {
+        "folke/snacks.nvim",
+        priority = 1000,
+        lazy = false,
+        opts = _Opts,
         keys = require("keymaps.snacks").snacks,
     },
 }

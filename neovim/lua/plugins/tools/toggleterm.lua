@@ -1,27 +1,30 @@
+local _Opts = {}
+
+_Opts.size = 13
+_Opts.open_mapping = [[<C-\>]]
+_Opts.hide_numbers = true
+_Opts.shade_filetypes = {}
+_Opts.shade_terminals = true
+_Opts.shading_factor = -15
+_Opts.start_in_insert = true
+_Opts.insert_mappings = true
+_Opts.persist_size = true
+_Opts.direction = "horizontal"
+_Opts.close_on_exit = true
+_Opts.shell = vim.o.shell
+
+_Opts.float_opts = {
+    border = "curved",
+    winblend = 0,
+    highlights = {
+        border = "Normal",
+        background = "Normal",
+    },
+}
+
 return {
     "akinsho/toggleterm.nvim",
     version = "*",
-    opts = {
-        size = 13,
-        open_mapping = [[<C-\>]],
-        hide_numbers = true,
-        shade_filetypes = {},
-        shade_terminals = true,
-        shading_factor = -15,
-        start_in_insert = true,
-        insert_mappings = true,
-        persist_size = true,
-        direction = "horizontal",
-        close_on_exit = true,
-        shell = vim.o.shell,
-        float_opts = {
-            border = "curved",
-            winblend = 0,
-            highlights = {
-                border = "Normal",
-                background = "Normal",
-            },
-        },
-    },
+    opts = _Opts,
     keys = require("keymaps.terminal").toggleterm,
 }

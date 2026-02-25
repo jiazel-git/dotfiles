@@ -1,24 +1,35 @@
+-- Noice options
+local _NoiceOpts = {}
+
+_NoiceOpts.poupmenu = {
+    enable = false,
+    backend = "nui",
+}
+
+_NoiceOpts.lsp = {
+    override = {
+        ["vim.lsp.util.convert_input_to_markdown_lines"] = true,
+        ["vim.lsp.util.stylize_markdown"] = true,
+        ["com.entry.get_documentation"] = true,
+    },
+    signature = {
+        enabled = false,
+    },
+}
+
+-- LazyDev options
+local _LazyDevOpts = {}
+
+_LazyDevOpts.library = {
+    { path = "${3rd}/luv/library", words = { "vim%.uv" } },
+}
+
 return {
     -- noice
     {
         "folke/noice.nvim",
         event = "VeryLazy",
-        opts = {
-            poupmenu = {
-                enable = false,
-                backend = "nui",
-            },
-            lsp = {
-                override = {
-                    ["vim.lsp.util.convert_input_to_markdown_lines"] = true,
-                    ["vim.lsp.util.stylize_markdown"] = true,
-                    ["com.entry.get_documentation"] = true,
-                },
-                signature = {
-                    enabled = false,
-                },
-            },
-        },
+        opts = _NoiceOpts,
         keys = require("keymaps.ui").noice,
         dependencies = {
             "MunifTanjim/nui.nvim",
@@ -46,10 +57,6 @@ return {
     {
         "folke/lazydev.nvim",
         ft = "lua",
-        opts = {
-            library = {
-                { path = "${3rd}/luv/library", words = { "vim%.uv" } },
-            },
-        },
+        opts = _LazyDevOpts,
     },
 }

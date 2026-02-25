@@ -1,3 +1,9 @@
+local _Opts = {}
+
+_Opts.cmake_compile_commands_options = {
+    action = "none",
+}
+
 return {
     "Civitasv/cmake-tools.nvim",
     dependencies = {
@@ -12,18 +18,8 @@ return {
                 require("lazy").load({ plugins = { "cmake-tools.nvim" } })
             end
         end
-        vim.api.nvim_create_autocmd(
-            "BufEnter",
-            { callback = check_cmake_project }
-        )
-        vim.api.nvim_create_autocmd(
-            "DirChanged",
-            { callback = check_cmake_project }
-        )
+        vim.api.nvim_create_autocmd("BufEnter", { callback = check_cmake_project })
+        vim.api.nvim_create_autocmd("DirChanged", { callback = check_cmake_project })
     end,
-    opts = {
-        cmake_compile_commands_options = {
-            action = "none",
-        },
-    },
+    opts = _Opts,
 }

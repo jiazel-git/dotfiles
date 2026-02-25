@@ -1,10 +1,9 @@
+local _Opts = {}
+
 return {
-    -- rainbow-delimiters
-    {
-        "HiPhish/rainbow-delimiters.nvim",
-        event = "BufReadPost",
-        submodules = false,
-        main = "rainbow-delimiters.setup",
-        opts = {},
-    },
+    "HiPhish/rainbow-delimiters.nvim",
+    event = "BufReadPost",
+    submodules = false,
+    main = "rainbow-delimiters.setup",
+    opts = _Opts,
 }

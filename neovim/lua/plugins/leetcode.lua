@@ -1,24 +1,26 @@
+local _Opts = {}
+
+_Opts.cn = {
+    enabled = true,
+    translator = true,
+    translate_problems = true,
+}
+
+_Opts.injector = {
+    ["cpp"] = {
+        imports = function()
+            return { "#include <bits/stdc++.h>", "using namespace std;" }
+        end,
+        after = "int main() {}",
+    },
+}
+
 return {
     "kawre/leetcode.nvim",
-    build = ":TSUpdate html", -- if you have `nvim-treesitter` installed
+    build = ":TSUpdate html",
     dependencies = {
-        -- include a picker of your choice, see picker section for more details
         "nvim-lua/plenary.nvim",
         "MunifTanjim/nui.nvim",
     },
-    opts = {
-        cn = {
-            enabled = true,
-            translator = true,
-            translate_problems = true,
-        },
-        injector = {
-            ["cpp"] = {
-                imports = function()
-                    return { "#include <bits/stdc++.h>", "using namespace std;" }
-                end,
-                after = "int main() {}",
-            },
-        },
-    },
+    opts = _Opts,
 }

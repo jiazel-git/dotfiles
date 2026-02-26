@@ -3,7 +3,7 @@ local M = {}
 -- flash.nvim
 M.flash = {
     {
-        "<leader><leader>w",
+        "s",
         mode = { "n", "x", "o" },
         function()
             require("flash").jump()
@@ -11,7 +11,7 @@ M.flash = {
         desc = "Flash",
     },
     {
-        "<leader><leader>W",
+        "S",
         mode = { "n", "x", "o" },
         function()
             require("flash").treesitter()

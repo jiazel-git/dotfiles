@@ -17,6 +17,24 @@ _NoiceOpts.lsp = {
     },
 }
 
+_NoiceOpts.views = {
+    cmdline_popup = {
+        position = {
+            row = 3,
+            col = "50%",
+        },
+        size = {
+            width = 60,
+            height = "auto",
+        },
+    },
+}
+
+_NoiceOpts.cmdline = {
+    enabled = true,
+    view = "cmdline_popup",
+}
+
 -- LazyDev options
 local _LazyDevOpts = {}
 

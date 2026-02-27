@@ -1,6 +1,6 @@
 math.randomseed(os.time())
 local _Opts = {}
-local _Header = require("lua.utils.dashboard").header
+local _Header = require("utils.dashboard").header
 
 _Opts.animate = {
     duration = 20,

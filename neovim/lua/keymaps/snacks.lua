@@ -314,6 +314,13 @@ M.snacks = {
         end,
         desc = "Git Log File",
     },
+    {
+        "<leader>lg",
+        function()
+            require("snacks").lazygit()
+        end,
+        desc = "Lazygit",
+    },
 }
 
 return M

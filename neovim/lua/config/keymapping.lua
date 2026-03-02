@@ -17,7 +17,7 @@ keyset("n", "K", vim.lsp.buf.hover, { desc = "Hover Documentation" })
 keyset("n", "<C-k>", vim.lsp.buf.signature_help, { desc = "Signature Help" })
 keyset("n", "<space>rn", vim.lsp.buf.rename, { desc = "Rename" })
 
-keyset("t", "jj", "[[<C-\\><C-n>]]", { desc = "Esc Insert Mode" })
+--keyset("t", "jj", "[[<C-\\><C-n>]]", { desc = "Esc Insert Mode" })
 keyset("v", "<leader>cf", function()
     vim.lsp.buf.format({ async = true })
 end, { desc = "Format File" })

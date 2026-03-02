@@ -39,10 +39,14 @@ _Opts.completion = {
             components = {
                 label = {
                     text = function(ctx)
-                        return require("colorful-menu").blink_components_text(ctx)
+                        return require("colorful-menu").blink_components_text(
+                            ctx
+                        )
                     end,
                     highlight = function(ctx)
-                        return require("colorful-menu").blink_components_highlight(ctx)
+                        return require("colorful-menu").blink_components_highlight(
+                            ctx
+                        )
                     end,
                 },
             },

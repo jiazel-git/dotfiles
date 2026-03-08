@@ -2,7 +2,7 @@ local _Opts = {}
 
 _Opts.keymap = {
     preset = "none",
-    ["<C-space>"] = {
+    ["<S-space>"] = {
         "show",
         "show_documentation",
         "hide_documentation",
@@ -51,6 +51,7 @@ _Opts.completion = {
                 },
             },
         },
+        scrollbar = false,
     },
 }
 

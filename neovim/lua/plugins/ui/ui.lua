@@ -28,6 +28,7 @@ _NoiceOpts.views = {
             height = "auto",
         },
     },
+    mini = {},
 }
 
 _NoiceOpts.cmdline = {

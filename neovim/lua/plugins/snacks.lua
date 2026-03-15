@@ -28,14 +28,25 @@ _Opts.indent = {
 
 _Opts.input = { enabled = true }
 
+local diagnostics = require("utils.icons").diagnostics_by_name
+
 _Opts.picker = {
     enabled = true,
     icons = {
-        diagnostics = require("utils.icons").diagnostics_by_name,
+        diagnostics = diagnostics,
     },
 }
 
-_Opts.notifier = { enabled = true, style = "fancy", date_format = "%c" }
+_Opts.notifier = {
+    enabled = true,
+    style = "fancy",
+    date_format = "%c",
+    icons = {
+        error = diagnostics.Error,
+        warn = diagnostics.Warn,
+        info = diagnostics.Info,
+    },
+}
 
 _Opts.quickfile = { enabled = true }
 

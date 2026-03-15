@@ -41,7 +41,11 @@ return {
     keys = require("keymaps.buffer").bufferline,
     opts = _Opts,
     config = function(_, opts)
-        opts.highlights = require("catppuccin.special.bufferline").get_theme()
+        local has_catppuccin, _ = pcall(require, "catppuccin")
+        if has_catppuccin then
+            opts.highlights =
+                require("catppuccin.special.bufferline").get_theme()
+        end
         require("bufferline").setup(opts)
         vim.api.nvim_create_autocmd("BufAdd", {
             callback = function()

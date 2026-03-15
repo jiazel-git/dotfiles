@@ -1,5 +1,9 @@
 {
   "diagnostics": {
-    "globals": ["vim"]
-  }
+    "globals": ["vim",
+            "nvim_bufferline"]
+  },
+    "diagnostics.disable": [
+        "undefined-global"
+    ]
 }

@@ -1,3 +1,5 @@
+/* wallust template - colors-rofi */
+
 * {
 active-background: #9186D2;
 active-foreground: #ECE5F0;

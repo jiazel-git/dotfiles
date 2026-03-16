@@ -1,9 +1,10 @@
 {
-  "diagnostics": {
-    "globals": ["vim",
-            "nvim_bufferline"]
-  },
-    "diagnostics.disable": [
-        "undefined-global"
-    ]
+  "runtime.version": "LuaJIT",
+  "runtime.path": ["?.lua", "?/init.lua"],
+  "runtime.library": ["${3rd}/luv/library", "${3rd}/busted/library"],
+  "diagnostics.globals": ["vim", "describe", "it", "before_each", "after_each"],
+  "diagnostics.disable": ["undefined-global", "missing-fields"],
+  "workspace.checkThirdParty": false,
+  "hint.enable": true,
+  "format.enable": true
 }

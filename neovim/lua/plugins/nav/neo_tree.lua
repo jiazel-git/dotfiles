@@ -63,7 +63,7 @@ return {
             end,
         },
     },
-    lazy = false,
+    cmd = "Neotree",
     opts = _Opts,
     vim.keymap.set("n", "<leader>e", "<Cmd>Neotree reveal<CR>"),
 }

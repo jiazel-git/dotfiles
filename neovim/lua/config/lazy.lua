@@ -34,7 +34,7 @@ require("lazy").setup({
         { import = "plugins.nav" },
     },
     defaults = {
-        lazy = false,
+        lazy = true,
         version = false,
     },
     checker = {

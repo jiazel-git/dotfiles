@@ -46,10 +46,6 @@ _LspOpts.diagnostics = {
     },
 }
 
-_LspOpts.inlay_hints = {
-    enabled = true,
-}
-
 _LspOpts.servers = {
     lua_ls = require("lsp.servers.lua_ls"),
     gopls = require("lsp.servers.gopls"),

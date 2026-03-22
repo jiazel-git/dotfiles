@@ -18,7 +18,14 @@ local _RenderMarkdown = {
         "nvim-treesitter/nvim-treesitter",
         "nvim-tree/nvim-web-devicons",
     },
-    opts = {},
+    lazy = false,
+    opts = {
+        code = {
+            disable_background = true,
+            inline = false,
+        },
+        heading = {},
+    },
 }
 
 return {

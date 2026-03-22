@@ -7,7 +7,7 @@ local source_exts = { ".cpp", ".cc", ".c", ".cxx" }
 --! 头文件扩展名列表
 local header_exts = { ".h", ".hpp", ".hxx" }
 
---! 
+--!
 --! @brief 在源文件和头文件之间切换
 --! @details 优先使用 clangd 的内置命令切换，若无 clangd 则手动查找对应文件
 --!
@@ -62,7 +62,7 @@ function M.switch_source_header()
     end
 end
 
---! 
+--!
 --! @brief 设置自定义高亮效果
 --! @details 覆盖默认的高亮配置，设置透明背景和自定义颜色
 --!
@@ -83,9 +83,31 @@ function M.set_highlight()
     set_hl(0, "FloatTitle", high_lights.Pink)
     set_hl(0, "SnacksPickerPreviewTitle", high_lights.Pink)
     set_hl(0, "LineNr", high_lights.Origin)
+
+    local has_tokyonight, _ = pcall(require, "tokyonight")
+    if has_tokyonight then
+        set_hl(0, "@markup.heading.1.markdown", { fg = "#82aaff", bg = "NONE" })
+        set_hl(
+            0,
+            "@markup.raw.markdown_inline",
+            { fg = "#82aaff", bg = "NONE" }
+        )
+        set_hl(0, "@markup.heading.2.markdown", { fg = "#ffc777", bg = "NONE" })
+        set_hl(0, "@markup.heading.3.markdown", { fg = "#c3e88d", bg = "NONE" })
+        set_hl(0, "@markup.heading.4.markdown", { fg = "#4fd6be", bg = "NONE" })
+        set_hl(0, "@markup.heading.5.markdown", { fg = "#c099ff", bg = "NONE" })
+        set_hl(0, "@markup.heading.6.markdown", { fg = "#fca7ea", bg = "NONE" })
+        set_hl(0, "@markup.heading.7.markdown", { fg = "#ff966c", bg = "NONE" })
+        set_hl(0, "RenderMarkdownCode", { bg = "NONE" })
+
+        -- render-markdown.nvim 高亮组
+        for i = 1, 6 do
+            set_hl(0, string.format("RenderMarkdownH%dBg", i), { bg = "NONE" })
+        end
+    end
 end
 
---! 
+--!
 --! @brief 检测文件类型是否为 JSON
 --! @details 读取文件前20行，跳过注释和空行，根据首行有效内容判断是否为 JSON
 --!

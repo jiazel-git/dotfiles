@@ -3,6 +3,29 @@ local M = {}
 -- lspconfig keymaps
 M.lsp = {
     {
+        "K",
+        vim.lsp.buf.hover,
+        desc = "Hover Documentation",
+    },
+    {
+        "<C-k>",
+        vim.lsp.buf.signature_help,
+        desc = "Signature Help",
+    },
+    {
+        "<space>rn",
+        vim.lsp.buf.rename,
+        desc = "Rename",
+    },
+    {
+        "<leader>cf",
+        function()
+            vim.lsp.buf.format({ async = true })
+        end,
+        desc = "Format File",
+        mode = "v",
+    },
+    {
         "<leader>so",
         require("utils.functions").switch_source_header,
         desc = "Switch between source/header",

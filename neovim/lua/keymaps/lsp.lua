@@ -7,11 +7,11 @@ M.lsp = {
         vim.lsp.buf.hover,
         desc = "Hover Documentation",
     },
-    {
-        "<C-k>",
-        vim.lsp.buf.signature_help,
-        desc = "Signature Help",
-    },
+    --{
+    --    "<C-k>",
+    --    vim.lsp.buf.signature_help,
+    --    desc = "Signature Help",
+    --},
     {
         "<space>rn",
         vim.lsp.buf.rename,

@@ -2,70 +2,36 @@ local M = {}
 
 local high_lights = require("config.highlight")
 
---! 源文件扩展名列表
-local source_exts = { ".cpp", ".cc", ".c", ".cxx" }
---! 头文件扩展名列表
-local header_exts = { ".h", ".hpp", ".hxx" }
-
---!
---! @brief 在源文件和头文件之间切换
---! @details 优先使用 clangd 的内置命令切换，若无 clangd 则手动查找对应文件
---!
-function M.switch_source_header()
-    --! 优先使用 clangd 的内置命令
-    local clients = vim.lsp.get_clients({ bufnr = 0, name = "clangd" })
-    if #clients > 0 then
-        vim.cmd("ClangdSwitchSourceHeader")
-        return
+--- 在源文件和头文件之间切换
+-- 使用 LSP 的 textDocument/switchSourceHeader 方法在对应的源文件和头文件之间切换
+-- @param bufnr number 缓冲区编号
+-- @param client table LSP 客户端对象
+function M.switch_source_header(bufnr, client)
+    local method_name = "textDocument/switchSourceHeader"
+    ---@diagnostic disable-next-line:param-type-mismatch
+    if not client or not client:supports_method(method_name) then
+        return vim.notify(
+            ("method %s is not supported by any servers active on the current buffer"):format(
+                method_name
+            )
+        )
     end
-
-    --! 手动切换
-    local current = vim.api.nvim_buf_get_name(0)
-    if not current or current == "" then
-        return
-    end
-
-    local base = current:match("(.+)%.[^.]+$")
-    if not base then
-        return
-    end
-
-    local target_exts
-
-    --! 判断当前是源文件还是头文件
-    for _, e in ipairs(source_exts) do
-        if current:match(e:gsub("%.", "%%.") .. "$") then
-            target_exts = header_exts
-            break
+    local params = vim.lsp.util.make_text_document_params(bufnr)
+    ---@diagnostic disable-next-line:param-type-mismatch
+    client:request(method_name, params, function(err, result)
+        if err then
+            error(tostring(err))
         end
-    end
-    if not target_exts then
-        for _, e in ipairs(header_exts) do
-            if current:match(e:gsub("%.", "%%.") .. "$") then
-                target_exts = source_exts
-                break
-            end
-        end
-    end
-
-    if not target_exts then
-        return
-    end
-
-    --! 尝试找到目标文件
-    for _, target_ext in ipairs(target_exts) do
-        local target = base .. target_ext
-        if vim.fn.filereadable(target) == 1 then
-            vim.cmd("edit " .. target)
+        if not result then
+            vim.notify("corresponding file cannot be determined")
             return
         end
-    end
+        vim.cmd.edit(vim.uri_to_fname(result))
+    end, bufnr)
 end
 
---!
---! @brief 设置自定义高亮效果
---! @details 覆盖默认的高亮配置，设置透明背景和自定义颜色
---!
+--- 设置自定义高亮效果
+-- 覆盖默认的高亮配置，设置透明背景和自定义颜色
 function M.set_highlight()
     local set_hl = vim.api.nvim_set_hl
     set_hl(0, "Winbar", { bg = "NONE" })
@@ -107,28 +73,26 @@ function M.set_highlight()
     end
 end
 
---!
---! @brief 检测文件类型是否为 JSON
---! @details 读取文件前20行，跳过注释和空行，根据首行有效内容判断是否为 JSON
---!
+--- 检测文件类型是否为 JSON
+-- 读取文件前20行，跳过注释和空行，根据首行有效内容判断是否为 JSON
 function M.check_file_type()
-    --! 已有 filetype 直接跳过
+    -- 已有 filetype 直接跳过
     if vim.bo.filetype ~= "" then
         return
     end
 
-    --! 读取前 20 行，跳过注释找第一行有效内容
+    -- 读取前 20 行，跳过注释找第一行有效内容
     local lines = vim.api.nvim_buf_get_lines(0, 0, 20, false)
     for _, line in ipairs(lines) do
         local trimmed = line:match("^%s*(.-)%s*$")
-        --! 跳过空行和注释
+        -- 跳过空行和注释
         if
             trimmed ~= ""
             and not trimmed:match("^//")
             and not trimmed:match("^#")
             and not trimmed:match("^/%*")
         then
-            --! 以 { 或 [ 开头可能是 JSON
+            -- 以 { 或 [ 开头可能是 JSON
             if trimmed:match("^[{%[]") then
                 vim.bo.filetype = "jsonc"
             end

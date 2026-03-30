@@ -13,4 +13,4 @@ keyset("n", "<leader>w", ":w")
 keyset("n", "<leader>q", ":q")
 keyset("n", "<C-n>", ":nohl<CR>")
 
-keyset("t", "jk", "[[<C-\\><C-n>]]", { desc = "Esc Insert Mode" })
+--keyset("t", "jk", "[[<C-\\><C-n>]]", { desc = "Esc Insert Mode" })

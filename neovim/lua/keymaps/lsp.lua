@@ -27,13 +27,15 @@ M.lsp = {
     },
     {
         "<leader>so",
-        require("utils.functions").switch_source_header,
+        function()
+            vim.cmd("LspClangdSwitchSourceHeader")
+        end,
         desc = "Switch between source/header",
     },
     {
         "<leader>sh",
         function()
-            vim.cmd("ClangdShowSymbolInfo")
+            vim.cmd("LspClangdShowSymbolInfo")
         end,
         desc = "Show symbol info",
     },

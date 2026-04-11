@@ -12,7 +12,7 @@ InlayHints:
     Designators: true
     ParameterNames: true
     DeducedTypes: true
-    DefaultArguments: true
+    DefaultArguments: false
 
 Hover:
     ShowAKA: true

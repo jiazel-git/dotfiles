@@ -1,8 +1,6 @@
 local _Opts = {}
 
 _Opts.options = {
-    close_command = "bdelete %d",
-    themable = true,
     offsets = {
         {
             filetype = "neo-tree",
@@ -33,6 +31,11 @@ _Opts.options = {
         end
         return s
     end,
+    hover = {
+        enabled = true,
+        delay = 200,
+        reveal = { "close" },
+    },
 }
 
 return {

@@ -1,0 +1,29 @@
+{
+	"hyprland/language": {
+		"format": "Lang: {}",
+		"format-en": "US",
+		"format-tr": "Korea",
+		"keyboard-name": "at-translated-set-2-keyboard",
+		"on-click": "hyprctl switchxkblayout $SET_KB next"
+	},
+	"hyprland/submap": {
+		"format": "<span style=\"italic\">  {}</span>",
+		"tooltip": false
+	},
+	"hyprland/window": {
+		"format": "{}",
+		"max-length": 25,
+		"separate-outputs": true,
+		"offscreen-css": true,
+		"offscreen-css-text": "(inactive)",
+		"rewrite": {
+			"(.*) — Mozilla Firefox": " ",
+			"(.*) - Google Chrome": " ",
+			"(.*) - fish": ">",
+			"(.*) - zsh": ">",
+			"(.*) - $term": ">",
+			"(.*) - nvim": " ",
+			"(.*)OC(.*)": ""
+		}
+	}
+}

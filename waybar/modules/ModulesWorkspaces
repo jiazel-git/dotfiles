@@ -123,5 +123,30 @@
 			"title<^qs-wlogout$>": " ",
 			"class<Bytedance-feishu>": ""
 		}
+	},
+	"hyprland/workspaces": {
+		"disable-scroll": true,
+		"all-outputs": true,
+		"warp-on-scroll": false,
+		"sort-by-number": true,
+		"show-special": false,
+		"on-click": "activate",
+		"on-scroll-up": "hyprctl dispatch workspace e+1",
+		"on-scroll-down": "hyprctl dispatch workspace e-1",
+		"persistent-workspaces": {
+			"*": 7
+		},
+		"format": "{icon} {windows}",
+		"format-icons": {
+			"1": "壹",
+			"2": "贰",
+			"3": "叁",
+			"4": "肆",
+			"5": "伍",
+			"6": "陆",
+			"7": "柒"
+		},
+		"format-window-separator": " ",
+		"window-rewrite-default": " "
 	}
 }

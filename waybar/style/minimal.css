@@ -1,0 +1,173 @@
+@define-color bg-color rgba(26, 27, 38, 0.9);
+@define-color text-color rgba(220, 224, 232, 0.9);
+
+@define-color color-workspace rgba(122, 162, 247, 1);
+@define-color color-workspace-active rgba(252, 165, 165, 1);
+@define-color color-clock rgba(158, 206, 255, 1);
+@define-color color-battery rgba(122, 226, 237, 1);
+@define-color color-cpu rgba(242, 205, 205, 1);
+@define-color color-memory rgba(203, 166, 247, 1);
+@define-color color-temperature rgba(253, 203, 110, 1);
+@define-color color-network rgba(113, 239, 249, 1);
+@define-color color-pulseaudio rgba(235, 148, 172, 1);
+@define-color color-player rgba(221, 160, 221, 1);
+@define-color color-window rgba(187, 154, 247, 1);
+@define-color color-tray rgba(249, 226, 175, 1);
+
+* {
+  font-family:
+    "JetBrains Mono Nerd Font", "Symbols Nerd Font", "JetBrains Mono",
+    sans-serif;
+  font-size: 12px;
+  font-weight: bold;
+  min-height: 0;
+  margin: 0;
+  padding: 0;
+}
+
+window#waybar {
+  background: transparent;
+  border: none;
+  box-shadow: none;
+  margin: 6px;
+}
+
+tooltip {
+  background: @bg-color;
+  border: 1px solid rgba(0, 0, 0, 0.3);
+  border-radius: 6px;
+  color: @text-color;
+}
+
+#workspaces button {
+  background: transparent;
+  color: @color-workspace;
+  margin: 2px;
+  padding: 4px 10.5px 8px 10.5px;
+  transition: all 0.2s ease;
+}
+
+#workspaces button:hover {
+  color: rgba(122, 162, 247, 0.8);
+}
+
+#workspaces button.focused {
+  color: @color-workspace-active;
+}
+
+#workspaces button.active {
+  color: @color-workspace-active;
+}
+
+#workspaces button.urgent {
+  color: rgba(241, 76, 76, 1);
+}
+
+#clock,
+#battery,
+#cpu,
+#memory,
+#temperature,
+#network,
+#pulseaudio,
+#custom.player,
+#tray {
+  background: transparent;
+  color: @text-color;
+  padding: 6px 10px;
+  margin: 2px;
+}
+
+#clock {
+  color: @color-clock;
+}
+
+#battery {
+  color: @color-battery;
+}
+
+#battery.charging {
+  color: @color-battery;
+}
+
+#battery.warning:not(.charging) {
+  color: rgba(249, 226, 175, 1);
+}
+
+#battery.critical:not(.charging) {
+  color: rgba(241, 76, 76, 1);
+}
+
+#cpu {
+  color: @color-cpu;
+}
+
+#memory {
+  color: @color-memory;
+}
+
+#temperature {
+  color: @color-temperature;
+}
+
+#temperature.critical {
+  color: rgba(241, 76, 76, 1);
+}
+
+#network {
+  color: @color-network;
+}
+
+#network.disconnected {
+  color: rgba(241, 76, 76, 1);
+}
+
+#pulseaudio {
+  color: @color-pulseaudio;
+}
+
+#custom.player {
+  color: @color-player;
+}
+
+#tray {
+  color: @color-tray;
+}
+
+#tray > .passive {
+  -gtk-icon-effect: dim;
+}
+
+#tray > .ms-0 {
+  -gtk-icon-effect: dim;
+}
+
+#tray > .needs-attention {
+  -gtk-icon-effect: highlight;
+}
+
+#hyprland.window,
+#window {
+  background: transparent;
+  color: @color-window;
+  padding: 6px 12px;
+  margin: 2px;
+}
+
+#idle_inhibitor {
+  background: transparent;
+  color: @text-color;
+  padding: 6px 10px;
+  margin: 2px;
+}
+
+group {
+  background: transparent;
+  margin: 2px;
+  padding: 2px;
+}
+
+separator {
+  background: rgba(255, 255, 255, 0.1);
+  margin: 2px;
+}

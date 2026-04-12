@@ -319,7 +319,7 @@
 		"scroll-step": 5
 	},
 	"tray": {
-		"icon-size": 20,
+		"icon-size": 16,
 		"spacing": 4
 	},
 	"wireplumber": {

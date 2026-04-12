@@ -52,7 +52,7 @@ BreakConstructorInitializers: AfterColon
 # 长字符串换行
 BreakStringLiterals: true
 # 模板声明后换行
-#BreakTemplateDeclarations: Yes
+BreakTemplateDeclarations: Yes
 # 指针对齐方式
 PointerAlignment: Left
 # 引用对齐方式

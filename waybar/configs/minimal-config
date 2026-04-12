@@ -21,10 +21,11 @@
 		"hyprland/workspaces"
 	],
 	"modules-center": [
-		"custom/cava_mviz"
+		"hyprland/window",
+		"custom/cava_mviz",
+		"tray"
 	],
 	"modules-right": [
-		"hyprland/window",
 		"network#speed",
 		"pulseaudio",
 		"pulseaudio#microphone",

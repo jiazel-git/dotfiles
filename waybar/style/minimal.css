@@ -146,6 +146,34 @@ tooltip {
   -gtk-icon-effect: highlight;
 }
 
+#tray menu {
+  background: rgba(30, 30, 46, 0.85);
+  border: 1px solid rgba(180, 190, 254, 0.2);
+  border-radius: 12px;
+  color: @text-color;
+  padding: 8px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+}
+
+#tray menu * {
+  border-radius: 8px;
+}
+
+#tray menu item {
+  padding: 6px 12px;
+  transition: all 0.2s ease;
+}
+
+#tray menu item:hover {
+  background: rgba(122, 162, 247, 0.2);
+  box-shadow: 0 0 10px rgba(122, 162, 247, 0.1);
+}
+
+#tray menu separator {
+  background: rgba(180, 190, 254, 0.1);
+  margin: 4px 0;
+}
+
 #hyprland.window,
 #window {
   background: transparent;

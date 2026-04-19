@@ -1,0 +1,214 @@
+add_newline = false
+
+format = """
+$username\
+$container\
+$directory\
+$git_branch\
+$git_commit\
+$git_state\
+$git_status\
+$shell\
+$package\
+$cmake\
+$cpp\
+$golang\
+$lua\
+$nodejs\
+$python\
+$rust\
+$cmd_duration\
+$line_break\
+$character"""
+
+palette = "tokyo_night"
+
+[palettes.tokyo_night]
+black = "#9C96B1"
+blue = "#0095FF"
+blue0 = "#569AF6"
+blue1 = "#0DB9D7"
+blue2 = "#05A1F7"
+blue5 = "#0081B5"
+blue6 = "#005A94"
+blue7 = "#4795F9"
+border = "#9C96B1"
+border_highlight = "#0095FF"
+comment = "#565F89"
+cyan = "#0095FF"
+dark3 = "#7F849C"
+dark5 = "#565F89"
+diff_add = "#B0C4DE"
+diff_change = "#E0E6F5"
+diff_delete = "#E8C0C0"
+diff_text = "#3D59A1"
+error = "#E06C75"
+fg = "#090c0c"
+fg_dark = "#565F89"
+fg_float = "#090c0c"
+fg_gutter = "#9C96B1"
+fg_sidebar = "#565F89"
+git_add = "#4E88A0"
+git_change = "#2E5596"
+git_delete = "#D4A5A5"
+git_ignore = "#7F849C"
+green = "#00A6A6"
+green1 = "#1F7F7F"
+green2 = "#008B8B"
+hint = "#00A6A6"
+info = "#0DB9D7"
+magenta = "#C678DD"
+magenta2 = "#E06C75"
+orange = "#E5C07B"
+purple = "#BC83F6"
+rainbow_1 = "#2E7DE9"
+rainbow_2 = "#C678DD"
+rainbow_3 = "#00A6A6"
+rainbow_4 = "#008B8B"
+rainbow_5 = "#BC83F6"
+rainbow_6 = "#569AF6"
+rainbow_7 = "#E5C07B"
+rainbow_8 = "#E06C75"
+red = "#E06C75"
+red1 = "#BE5046"
+red2 = "#E06C75"
+teal = "#008B8B"
+terminal_black = "#7F849C"
+terminal_black_bright = "#9C96B1"
+terminal_blue = "#0095FF"
+terminal_blue_bright = "#569AF6"
+terminal_cyan = "#0095FF"
+terminal_cyan_bright = "#0DB9D7"
+terminal_green = "#00A6A6"
+terminal_green_bright = "#00B4B4"
+terminal_magenta = "#C678DD"
+terminal_magenta_bright = "#BC83F6"
+terminal_red = "#E06C75"
+terminal_red_bright = "#FF6B6B"
+terminal_white = "#565F89"
+terminal_white_bright = "#090c0c"
+terminal_yellow = "#E5C07B"
+terminal_yellow_bright = "#FFD700"
+todo = "#2E7DE9"
+warning = "#E5C07B"
+yellow = "#E5C07B"
+white = "#090c0c"
+
+[container]
+disabled = false
+format = '[$symbol]($style) '
+symbol = "🐳"
+style = "bold terminal_magenta_bright"
+
+[character]
+success_symbol = "[➜](bold terminal_green_bright)"
+error_symbol = "[✗](bold terminal_red_bright)"
+vimcmd_symbol = "[❮](bold terminal_green_bright)"
+
+[directory]
+style = "bold terminal_blue_bright"
+truncation_length = 3
+truncate_to_repo = true
+home = "~"
+home_symbol = "󰋜 "
+truncation_symbol = "󰋜 "
+format = "[$path]($style)[$read_only]($read_only_style) "
+read_only = " 󰌾"
+read_only_style = "bold terminal_red_bright"
+
+[username]
+style_user = "bold terminal_yellow_bright"
+format = "[$user]($style) "
+disabled = false
+show_always = true
+aliases = { "545411" = "jiazel" }
+
+[hostname]
+ssh_only = false
+format = "[$ssh_symbol$hostname]($style) "
+style = "bold terminal_cyan_bright"
+ssh_symbol = "󰅟 "
+
+[git_branch]
+format = "[$symbol$branch]($style) "
+symbol = " "
+style = "bold terminal_magenta_bright"
+
+[git_commit]
+commit_hash_length = 7
+format = "[$hash]($style) "
+style = "bold terminal_magenta_bright"
+only_detached = false
+tag_disabled = false
+tag_symbol = " 󰓹 "
+
+[git_state]
+format = "[$state($progress_current/$progress_total)]($style) "
+style = "bold terminal_yellow_bright"
+
+[git_status]
+format = "([$all_status$ahead_behind]($style)) "
+style = "bold terminal_red_bright"
+conflicted = " 🏳"
+ahead = " ⇡"
+behind = "⇣"
+diverged = "⇕"
+stashed = " 📦"
+modified = " !"
+staged = " +"
+renamed = " »"
+deleted = " ✗"
+untracked = " ?"
+
+[package]
+format = "[$symbol$version]($style) "
+symbol = "󰏗 "
+style = "bold terminal_blue"
+
+[shell]
+disabled = false
+format = "[$indicator]($style) "
+bash_indicator = "󰆜"
+zsh_indicator = ""
+fish_indicator = "󰈺"
+nu_indicator = ">"
+style = "bold terminal_cyan_bright"
+
+[cmd_duration]
+disabled = true
+
+[cmake]
+format = "[$symbol$version]($style) "
+symbol = "△ "
+style = "bold terminal_blue_bright"
+
+[cpp]
+format = "[$symbol$version]($style) "
+symbol = " "
+style = "bold terminal_blue_bright"
+
+[golang]
+format = "[$symbol($version)]($style) "
+symbol = " "
+style = "bold terminal_cyan_bright"
+
+[lua]
+format = "[$symbol($version)]($style) "
+symbol = " "
+style = "bold terminal_cyan_bright"
+
+[nodejs]
+format = "[$symbol($version)]($style) "
+symbol = "󰎙 "
+style = "bold terminal_green_bright"
+
+[python]
+format = "[$symbol$pyenv_prefix($version)(\\($virtualenv\\))]($style) "
+symbol = "󰌠 "
+style = "bold terminal_yellow_bright"
+pyenv_version_name = false
+
+[rust]
+format = "[$symbol($version)]($style) "
+symbol = "󱘘 "
+style = "bold terminal_red_bright"

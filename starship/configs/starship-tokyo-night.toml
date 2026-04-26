@@ -109,7 +109,6 @@ vimcmd_symbol = "[❮](bold terminal_green_bright)"
 style = "bold terminal_blue_bright"
 truncation_length = 3
 truncate_to_repo = true
-home = "~"
 home_symbol = "󰋜 "
 truncation_symbol = "󰋜 "
 format = "[$path]($style)[$read_only]($read_only_style) "

@@ -22,6 +22,7 @@ alias lla='ls -la'
 alias lt='ls --tree'
 alias n='nvim'
 alias lg='lazygit'
+alias oc='opencode'
 
 # Set-up FZF key bindings (CTRL R for fuzzy history finder)
 source <(fzf --zsh)

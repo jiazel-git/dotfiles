@@ -24,7 +24,10 @@ function M.setup()
     return {
         options = {
             component_separators = { left = "", right = "" },
-            section_separators = { left = "", right = "" },
+            section_separators = {
+                left = icons.SEPARATORS.ROUND_RIGHT,
+                right = icons.SEPARATORS.ROUND_LEFT,
+            },
             theme = {
                 normal = {
                     a = { fg = colors.BASE, bg = colors.BLUE, gui = "bold" },
@@ -68,7 +71,7 @@ function M.setup()
             lualine_b = {
                 {
                     function()
-                        return ""
+                        return icons.SEPARATORS.ROUND_LEFT
                     end,
                     color = { fg = colors.LAVENDER },
                     padding = { left = 0, right = 0 },
@@ -77,7 +80,7 @@ function M.setup()
                     function()
                         return vim.fn.fnamemodify(vim.fn.getcwd(), ":t")
                     end,
-                    icon = "",
+                    icon = icons.FOLDER_ALT,
                     color = {
                         fg = colors.BASE,
                         bg = colors.LAVENDER,
@@ -86,12 +89,12 @@ function M.setup()
                 },
                 {
                     function()
-                        return ""
+                        return icons.SEPARATORS.ROUND_RIGHT
                     end,
                     color = { fg = colors.LAVENDER },
                     padding = { left = 0, right = 1 },
                 },
-                { "branch", icon = "" },
+                { "branch", icon = icons.BRANCH_ALT },
                 {
                     "diff",
                     source = function()
@@ -115,7 +118,7 @@ function M.setup()
             lualine_c = {
                 {
                     function()
-                        return ""
+                        return icons.SEPARATORS.ROUND_LEFT
                     end,
                     color = { fg = colors.LAVENDER },
                     padding = { left = 0, right = 0 },
@@ -124,7 +127,10 @@ function M.setup()
                     "filename",
                     file_status = true,
                     path = 0,
-                    symbols = { modified = " ●", readonly = " " },
+                    symbols = {
+                        modified = icons.MODIFIED,
+                        readonly = icons.READONLY,
+                    },
                     color = {
                         fg = colors.BASE,
                         bg = colors.LAVENDER,
@@ -134,7 +140,7 @@ function M.setup()
                 },
                 {
                     function()
-                        return ""
+                        return icons.SEPARATORS.ROUND_RIGHT
                     end,
                     color = { fg = colors.LAVENDER },
                     padding = { left = 0, right = 1 },
@@ -157,7 +163,7 @@ function M.setup()
                 },
                 {
                     "searchcount",
-                    icon = "",
+                    icon = icons.SEARCH,
                     color = { fg = colors.GREEN, gui = "bold" },
                 },
             },
@@ -198,13 +204,17 @@ function M.setup()
                         end
                         return msg
                     end,
-                    icon = " ",
+                    icon = icons.LSP,
                     color = { fg = colors.SKY, gui = "bold" },
                 },
                 { "encoding" },
                 {
                     "fileformat",
-                    symbols = { unix = "", dos = "", mac = "" },
+                    symbols = {
+                        unix = icons.UNIX,
+                        dos = icons.DOS,
+                        mac = icons.MAC,
+                    },
                 },
             },
             lualine_y = { "progress" },

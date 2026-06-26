@@ -3,6 +3,7 @@ local M = {}
 
 function M.setup()
     local colors = require("lualine-themes.palette").get()
+    local icons = require("utils.icons")
 
     local function get_mode_color()
         local mode_color = {
@@ -167,7 +168,8 @@ function M.setup()
     local function create_separator(side, use_mode_color)
         return {
             function()
-                return side == "left" and "" or "" -- Choose separator symbol based on side
+                return side == "left" and icons.SEPARATORS.ANGLE_LEFT
+                    or icons.SEPARATORS.ANGLE_RIGHT
             end,
             color = function()
                 -- Set color based on mode or opposite color
@@ -256,41 +258,15 @@ function M.setup()
             },
         },
         sections = {
-            lualine_a = {},
-            lualine_b = {},
-            lualine_c = {},
-            lualine_x = {},
-            lualine_y = {},
-            lualine_z = {},
+            lualine_a = {}, lualine_b = {},
+            lualine_c = {}, lualine_x = {},
+            lualine_y = {}, lualine_z = {},
         },
         inactive_sections = {
-            lualine_a = {},
-            lualine_b = {},
-            lualine_c = {
-                {
-
-                    "location",
-                    color = function()
-                        return {
-                            fg = colors.FG,
-                            gui = "bold",
-                        }
-                    end,
-                },
-            },
-            lualine_x = {
-                {
-                    "filename",
-                    color = function()
-                        return {
-                            fg = colors.FG,
-                            gui = "bold,italic",
-                        }
-                    end,
-                },
-            },
-            lualine_y = {},
-            lualine_z = {},
+            lualine_a = {}, lualine_b = {},
+            lualine_c = { { "location", color = function() return { fg = colors.FG, gui = "bold" } end } },
+            lualine_x = { { "filename", color = function() return { fg = colors.FG, gui = "bold,italic" } end } },
+            lualine_y = {}, lualine_z = {},
         },
     }
 
@@ -323,7 +299,7 @@ function M.setup()
         function()
             return vim.fn.fnamemodify(vim.fn.getcwd(), ":t")
         end,
-        icon = " ",
+        icon = icons.FOLDER,
         color = function()
             local virtual_env = vim.env.VIRTUAL_ENV
             if virtual_env then
@@ -348,7 +324,7 @@ function M.setup()
 
     ins_left({
         function()
-            return ""
+            return icons.SEPARATORS.FILLER
         end,
         color = function()
             return {
@@ -470,7 +446,7 @@ function M.setup()
             end
             return msg
         end,
-        icon = " ",
+        icon = icons.LSP,
         color = {
             fg = colors.YELLOW,
             gui = "bold",
@@ -479,7 +455,7 @@ function M.setup()
 
     ins_right({
         function()
-            return ""
+            return icons.SEPARATORS.FILLER
         end,
         color = function()
             return { fg = get_middle_color() }
@@ -495,7 +471,7 @@ function M.setup()
 
     ins_right({
         "branch",
-        icon = " ",
+        icon = icons.BRANCH,
         --[[ Truncates and formats Git branch names for display in lualine:
     First segment: Uppercase, truncated to 1 character.
     Middle segments: Lowercase, truncated to 1 character.

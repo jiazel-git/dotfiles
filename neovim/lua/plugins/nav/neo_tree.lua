@@ -65,5 +65,5 @@ return {
     },
     cmd = "Neotree",
     opts = _Opts,
-    vim.keymap.set("n", "<leader>e", "<Cmd>Neotree reveal<CR>"),
+    keys = require("keymaps.nav").neo_tree,
 }

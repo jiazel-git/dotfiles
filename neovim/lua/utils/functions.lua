@@ -1,6 +1,6 @@
 local M = {}
 
-local high_lights = require("config.highlight")
+local high_lights = require("core.highlight")
 
 --- 在源文件和头文件之间切换
 -- 使用 LSP 的 textDocument/switchSourceHeader 方法在对应的源文件和头文件之间切换

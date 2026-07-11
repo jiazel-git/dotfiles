@@ -24,14 +24,16 @@ vim.opt.rtp:prepend(lazypath)
 require("lazy").setup({
     spec = {
         { import = "plugins" },
+        { import = "plugins.core" },
         { import = "plugins.colorscheme" },
-        --{ import = "plugins.ai" },
-        { import = "plugins.ui" },
-        { import = "plugins.lsp" },
         { import = "plugins.editor" },
+        { import = "plugins.ui" },
         { import = "plugins.tools" },
         { import = "plugins.git" },
         { import = "plugins.nav" },
+        { import = "lsp" },
+        { import = "security" },
+        -- { import = "ai" }, -- Reserved for AI Workflow layer
     },
     defaults = {
         lazy = true,

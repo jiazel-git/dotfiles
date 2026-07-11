@@ -18,8 +18,14 @@ return {
                 require("lazy").load({ plugins = { "cmake-tools.nvim" } })
             end
         end
-        vim.api.nvim_create_autocmd("BufEnter", { callback = check_cmake_project })
-        vim.api.nvim_create_autocmd("DirChanged", { callback = check_cmake_project })
+        vim.api.nvim_create_autocmd(
+            "BufEnter",
+            { callback = check_cmake_project }
+        )
+        vim.api.nvim_create_autocmd(
+            "DirChanged",
+            { callback = check_cmake_project }
+        )
     end,
     opts = _Opts,
 }

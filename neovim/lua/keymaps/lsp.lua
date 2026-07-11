@@ -49,15 +49,4 @@ M.lsp = {
     },
 }
 
--- symbols-outline.nvim
-M.symbols_outline = {
-    {
-        "<leader>cS",
-        function()
-            require("symbols-outline").toggle_outline()
-        end,
-        desc = "Symbols Outline",
-    },
-}
-
 return M

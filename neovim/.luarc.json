@@ -3,7 +3,8 @@
   "runtime.path": ["?.lua", "?/init.lua"],
   "runtime.library": ["${3rd}/luv/library", "${3rd}/busted/library"],
   "diagnostics.globals": ["vim", "describe", "it", "before_each", "after_each"],
-  "diagnostics.disable": ["undefined-global", "missing-fields"],
+  "diagnostics.disable": ["undefined-global", "missing-fields",
+        "deprecated"],
   "workspace.checkThirdParty": false,
   "hint.enable": true,
   "format.enable": true

@@ -1,8 +1,8 @@
-require("config.options")
-require("config.keymapping")
-require("config.autocmd")
-require("config.highlight")
-require("config.lazy")
+require("core.options")
+require("core.keymaps")
+require("core.autocmds")
+require("core.highlight")
+require("core.lazy")
 
 local colorscheme = require("utils.colorscheme")
 vim.cmd.colorscheme(colorscheme.Tokyonight)

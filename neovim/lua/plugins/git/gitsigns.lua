@@ -3,8 +3,8 @@ local _Opts = {}
 _Opts.signs = {
     add = { text = "▎" },
     change = { text = "▎" },
-    delete = { text = "" },
-    topdelete = { text = "" },
+    delete = { text = "" },
+    topdelete = { text = "" },
     changedelete = { text = "▎" },
     untracked = { text = "▎" },
 }
@@ -12,8 +12,8 @@ _Opts.signs = {
 _Opts.signs_staged = {
     add = { text = "▎" },
     change = { text = "▎" },
-    delete = { text = "" },
-    topdelete = { text = "" },
+    delete = { text = "" },
+    topdelete = { text = "" },
     changedelete = { text = "▎" },
 }
 

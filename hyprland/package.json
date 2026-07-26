@@ -1,0 +1,14 @@
+{
+    "name": "hyprland-config",
+    "description": "Modular Hyprland Lua configuration",
+    "version": "1.0.0",
+    "scripts": {
+        "lint": "luacheck modules/ *.lua",
+        "format": "stylua modules/ *.lua",
+        "format:check": "stylua --check modules/ *.lua"
+    },
+    "devDependencies": {
+        "luacheck": "^1.1.0",
+        "stylua": "^0.20.0"
+    }
+}

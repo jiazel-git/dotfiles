@@ -8,5 +8,5 @@ return {
     "folke/flash.nvim",
     event = "VeryLazy",
     opts = _Opts,
-    keys = require("keymaps.editor").flash,
+    keys = require("keymaps.editor.flash"),
 }

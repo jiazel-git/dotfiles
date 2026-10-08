@@ -1,6 +1,6 @@
 math.randomseed(os.time())
 local _Opts = {}
-local _Header = require("utils.dashboard").header
+local _Header = require("config.dashboard").header
 
 _Opts.animate = {
     duration = 20,
@@ -28,7 +28,7 @@ _Opts.indent = {
 
 _Opts.input = { enabled = true }
 
-local diagnostics = require("utils.icons").diagnostics_by_name
+local diagnostics = require("config.icons").diagnostics_by_name
 
 _Opts.picker = {
     enabled = true,
@@ -65,6 +65,6 @@ return {
         priority = 1000,
         lazy = false,
         opts = _Opts,
-        keys = require("keymaps.snacks").snacks,
+        keys = require("keymaps.core.snacks"),
     },
 }

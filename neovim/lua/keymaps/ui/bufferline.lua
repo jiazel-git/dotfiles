@@ -1,7 +1,5 @@
-local M = {}
-
--- bufferline.nvim
-M.bufferline = {
+-- bufferline.nvim (plugins/ui/bufferline.lua)
+return {
     { "<leader>bp", "<Cmd>BufferLineTogglePin<CR>", desc = "Toggle Pin" },
     {
         "<leader>bP",
@@ -76,5 +74,3 @@ M.bufferline = {
         desc = "Go to Last Buffer",
     },
 }
-
-return M

@@ -1,4 +1,4 @@
-local functions = require("utils.functions")
+local lsp_utils = require("lsp.lib.utils")
 return {
     capabilities = {
         offsetEncoding = { "utf-8", "utf-16" },
@@ -15,7 +15,7 @@ return {
             bufnr,
             "LspClangdSwitchSourceHeader",
             function()
-                functions.switch_source_header(bufnr, client)
+                lsp_utils.switch_source_header(bufnr, client)
             end,
             { desc = "Switch between source/header" }
         )

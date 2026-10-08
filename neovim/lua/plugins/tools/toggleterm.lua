@@ -26,5 +26,5 @@ return {
     "akinsho/toggleterm.nvim",
     version = "*",
     opts = _Opts,
-    keys = require("keymaps.terminal").toggleterm,
+    keys = require("keymaps.tools.toggleterm"),
 }

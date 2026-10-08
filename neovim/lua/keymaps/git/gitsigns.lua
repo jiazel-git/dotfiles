@@ -1,45 +1,43 @@
-local M = {}
-
--- gitsigns.nvim keymaps
-M.gitsigns = {
+-- gitsigns.nvim (plugins/git/gitsigns.lua)
+return {
     {
         "]h",
         function()
             require("gitsigns").nav_hunk("next")
         end,
-        desc = "next hunk",
+        desc = "Next hunk",
     },
     {
         "[h",
         function()
             require("gitsigns").nav_hunk("prev")
         end,
-        desc = "prev hunk",
+        desc = "Prev hunk",
     },
     {
         "]H",
         function()
             require("gitsigns").nav_hunk("last")
         end,
-        desc = "last hunk",
+        desc = "Last hunk",
     },
     {
         "[H",
         function()
             require("gitsigns").nav_hunk("first")
         end,
-        desc = "first hunk",
+        desc = "First hunk",
     },
     {
         "<leader>ghs",
         ":Gitsigns stage_hunk<CR>",
-        desc = "stage hunk",
+        desc = "Stage hunk",
         mode = { "n", "v" },
     },
     {
         "<leader>ghr",
         ":Gitsigns reset_hunk<CR>",
-        desc = "reset hunk",
+        desc = "Reset hunk",
         mode = { "n", "v" },
     },
     {
@@ -47,70 +45,68 @@ M.gitsigns = {
         function()
             require("gitsigns").stage_buffer()
         end,
-        desc = "stage buffer",
+        desc = "Stage buffer",
     },
     {
         "<leader>ghu",
         function()
             require("gitsigns").undo_stage_hunk()
         end,
-        desc = "undo stage hunk",
+        desc = "Undo stage hunk",
     },
     {
         "<leader>ghR",
         function()
             require("gitsigns").reset_buffer()
         end,
-        desc = "reset buffer",
+        desc = "Reset buffer",
     },
     {
         "<leader>ghp",
         function()
             require("gitsigns").preview_hunk_inline()
         end,
-        desc = "preview hunk inline",
+        desc = "Preview hunk inline",
     },
     {
         "<leader>ghP",
         function()
             require("gitsigns").preview_hunk()
         end,
-        desc = "preview hunk",
+        desc = "Preview hunk",
     },
     {
         "<leader>ghb",
         function()
             require("gitsigns").blame_line({ full = true })
         end,
-        desc = "blame line",
+        desc = "Blame line",
     },
     {
         "<leader>ghB",
         function()
             require("gitsigns").blame()
         end,
-        desc = "blame buffer",
+        desc = "Blame buffer",
     },
     {
         "<leader>ghd",
         function()
             require("gitsigns").diffthis()
         end,
-        desc = "diff this",
+        desc = "Diff this",
     },
     {
         "<leader>ghD",
         function()
             require("gitsigns").diffthis("~")
         end,
-        desc = "diff this ~",
+        desc = "Diff this ~",
     },
     {
         "ih",
         ":<C-U>Gitsigns select_hunk<CR>",
-        desc = "gitsigns select hunk",
+        desc = "Select hunk",
         mode = { "o", "x" },
     },
 }
-
-return M

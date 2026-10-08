@@ -1,7 +1,5 @@
-local M = {}
-
--- snacks.nvim picker keymaps
-M.snacks = {
+-- snacks.nvim picker keymaps (plugins/core/snacks.lua)
+return {
     -- find
     {
         "<leader>fb",
@@ -322,5 +320,3 @@ M.snacks = {
         desc = "Lazygit",
     },
 }
-
-return M

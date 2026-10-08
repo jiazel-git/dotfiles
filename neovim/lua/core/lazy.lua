@@ -22,9 +22,12 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup({
+    -- 约定：每个 import 对应一个目录，目录顶层的 .lua 即 lazy spec；
+    -- 新增插件子目录需在此追加一行；非 spec 辅助模块放无 init.lua 的子目录（如 lsp/lib/）
     spec = {
-        { import = "plugins" },
         { import = "plugins.core" },
+        { import = "plugins.completion" },
+        { import = "plugins.format" },
         { import = "plugins.colorscheme" },
         { import = "plugins.editor" },
         { import = "plugins.ui" },
@@ -32,7 +35,6 @@ require("lazy").setup({
         { import = "plugins.git" },
         { import = "plugins.nav" },
         { import = "lsp" },
-        { import = "security" },
         -- { import = "ai" }, -- Reserved for AI Workflow layer
     },
     defaults = {

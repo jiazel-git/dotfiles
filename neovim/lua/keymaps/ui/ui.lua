@@ -1,7 +1,5 @@
-local M = {}
-
--- noice.nvim
-M.noice = {
+-- noice.nvim (plugins/ui/ui.lua)
+return {
     {
         "<leader>sN",
         function()
@@ -17,16 +15,3 @@ M.noice = {
         desc = "[Noice] Show history messages",
     },
 }
-
--- which-key.nvim
-M.whichkey = {
-    {
-        "?",
-        function()
-            require("which-key").show()
-        end,
-        desc = "Show all Keymaps",
-    },
-}
-
-return M

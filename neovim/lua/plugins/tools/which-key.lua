@@ -58,5 +58,5 @@ return {
     "folke/which-key.nvim",
     event = "VeryLazy",
     opts = _Opts,
-    keys = require("keymaps.ui").whichkey,
+    keys = require("keymaps.tools.which-key"),
 }

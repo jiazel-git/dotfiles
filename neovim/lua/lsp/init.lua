@@ -1,4 +1,6 @@
--- Mason options
+-- LSP 层入口（lazy spec）
+-- 约定：lsp/ 顶层只放本文件；辅助模块放 lsp/lib/，服务器配置放 lsp/servers/
+-- Mason
 local _MasonOpts = {}
 
 _MasonOpts.ensure_installed = {
@@ -29,22 +31,7 @@ _MasonOpts.ui = {
 -- LSP options
 local _LspOpts = {}
 
-_LspOpts.diagnostics = {
-    underline = true,
-    update_in_insert = false,
-    virtual_text = {
-        spacing = 4,
-        source = "if_many",
-        prefix = function(diagnostic)
-            local icons = require("utils.icons").diagnostics_by_severity
-            return icons[diagnostic.severity] or "● "
-        end,
-    },
-    severity_sort = true,
-    signs = {
-        text = require("utils.icons").diagnostics_by_severity,
-    },
-}
+_LspOpts.diagnostics = require("lsp.lib.diagnostics")
 
 _LspOpts.servers = {
     lua_ls = require("lsp.servers.lua_ls"),
@@ -118,6 +105,6 @@ return {
                 setup(server)
             end
         end,
-        keys = require("keymaps.lsp").lsp,
+        keys = require("keymaps.lsp.init"),
     },
 }

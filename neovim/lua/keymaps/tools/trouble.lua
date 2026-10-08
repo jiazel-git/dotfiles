@@ -1,7 +1,5 @@
-local M = {}
-
--- trouble.nvim
-M.trouble = {
+-- trouble.nvim (plugins/tools/trouble.lua)
+return {
     {
         "<leader>xx",
         "<cmd>Trouble diagnostics toggle<cr>",
@@ -33,5 +31,3 @@ M.trouble = {
         desc = "Quickfix List (Trouble)",
     },
 }
-
-return M

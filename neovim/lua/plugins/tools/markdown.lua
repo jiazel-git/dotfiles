@@ -19,6 +19,7 @@ local _RenderMarkdown = {
         "nvim-tree/nvim-web-devicons",
     },
     lazy = false,
+    keys = require("keymaps.tools.markdown"),
     opts = {
         code = {
             disable_background = true,

@@ -65,5 +65,5 @@ return {
     },
     cmd = "Neotree",
     opts = _Opts,
-    keys = require("keymaps.nav").neo_tree,
+    keys = require("keymaps.nav.neo_tree"),
 }

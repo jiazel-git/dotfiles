@@ -49,7 +49,7 @@ return {
         "folke/noice.nvim",
         event = "VeryLazy",
         opts = _NoiceOpts,
-        keys = require("keymaps.ui").noice,
+        keys = require("keymaps.ui.ui"),
         dependencies = {
             "MunifTanjim/nui.nvim",
             "rcarriga/nvim-notify",

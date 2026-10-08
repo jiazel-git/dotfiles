@@ -18,7 +18,7 @@ _Opts.options = {
     },
     diagnostics = "nvim_lsp",
     diagnostics_indicator = function(_, _, diagnostics_dict, _)
-        local icons = require("utils.icons").diagnostics_by_name
+        local icons = require("config.icons").diagnostics_by_name
         local s = ""
         for name, icon in pairs(icons) do
             -- bufferline uses: error, warning, info, hint
@@ -41,7 +41,7 @@ _Opts.options = {
 return {
     "akinsho/bufferline.nvim",
     event = "VeryLazy",
-    keys = require("keymaps.buffer").bufferline,
+    keys = require("keymaps.ui.bufferline"),
     opts = _Opts,
     config = function(_, opts)
         local has_catppuccin, _ = pcall(require, "catppuccin")

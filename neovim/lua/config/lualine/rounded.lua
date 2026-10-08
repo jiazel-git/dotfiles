@@ -2,8 +2,8 @@
 local M = {}
 
 function M.setup()
-    local colors = require("lualine-themes.palette").get()
-    local icons = require("utils.icons")
+    local colors = require("config.lualine.palette").get()
+    local icons = require("config.icons")
 
     local function mode_name()
         local modes = {

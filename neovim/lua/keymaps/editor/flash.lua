@@ -1,7 +1,5 @@
-local M = {}
-
--- flash.nvim
-M.flash = {
+-- flash.nvim (plugins/editor/flash.lua)
+return {
     {
         "s",
         mode = { "n", "x", "o" },
@@ -43,23 +41,3 @@ M.flash = {
         desc = "Toggle Flash Search",
     },
 }
-
--- todo-comments.nvim
-M.todo = {
-    {
-        "]t",
-        function()
-            require("todo-comments").jump_next()
-        end,
-        desc = "Next Todo",
-    },
-    {
-        "[t",
-        function()
-            require("todo-comments").jump_prev()
-        end,
-        desc = "Prev Todo",
-    },
-}
-
-return M

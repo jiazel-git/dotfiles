@@ -14,5 +14,5 @@ return {
     event = "BufReadPost",
     dependencies = { "nvim-lua/plenary.nvim" },
     opts = _Opts,
-    keys = require("keymaps.editor").todo,
+    keys = require("keymaps.editor.todo-comments"),
 }

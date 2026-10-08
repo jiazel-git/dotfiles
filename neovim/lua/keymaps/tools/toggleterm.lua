@@ -1,7 +1,5 @@
-local M = {}
-
--- toggleterm.nvim
-M.toggleterm = {
+-- toggleterm.nvim (plugins/tools/toggleterm.lua)
+return {
     {
         "<C-\\>",
         function()
@@ -31,5 +29,3 @@ M.toggleterm = {
         desc = "Vertical Terminal",
     },
 }
-
-return M

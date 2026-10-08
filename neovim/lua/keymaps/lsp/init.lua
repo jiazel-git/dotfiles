@@ -1,7 +1,5 @@
-local M = {}
-
--- lspconfig keymaps
-M.lsp = {
+-- lspconfig keymaps (lsp/init.lua)
+return {
     {
         "K",
         vim.lsp.buf.hover,
@@ -48,5 +46,3 @@ M.lsp = {
         desc = "Code Action",
     },
 }
-
-return M

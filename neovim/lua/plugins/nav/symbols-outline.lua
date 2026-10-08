@@ -6,5 +6,5 @@ return {
     "simrat39/symbols-outline.nvim",
     cmd = "SymbolsOutline",
     opts = _Opts,
-    keys = require("keymaps.nav").symbols_outline,
+    keys = require("keymaps.nav.symbols-outline"),
 }

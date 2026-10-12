@@ -1,11 +1,9 @@
 local M = {}
 
 M.SEPARATORS = {
-    ANGLE_LEFT = "",
-    ANGLE_RIGHT = "",
-    ROUND_LEFT = "",
-    ROUND_RIGHT = "",
-    FILLER = "",
+    POWERLINE_SECTION_LEFT = "",
+    POWERLINE_SECTION_RIGHT = "",
+    FILLER = "",
 }
 
 M.FOLDER = ""

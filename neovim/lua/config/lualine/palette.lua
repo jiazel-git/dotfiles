@@ -1,45 +1,46 @@
--- Lualine color palette based on Catppuccin
+-- Lualine color palette based on Tokyo Night
 local M = {}
 
 function M.get()
-    local C = require("catppuccin.palettes").get_palette()
+    local style = require("tokyonight.config").options.style
+    local C = require("tokyonight.colors").setup({ style = style })
 
     return {
         -- Base colors
         BG = "NONE",
-        FG = C.text,
+        FG = C.fg,
 
         -- Accent colors
         YELLOW = C.yellow,
-        CYAN = C.teal,
-        DARKBLUE = C.sapphire,
+        CYAN = C.cyan,
+        DARKBLUE = C.blue0,
         GREEN = C.green,
-        ORANGE = C.peach,
-        VIOLET = C.mauve,
-        MAGENTA = C.pink,
+        ORANGE = C.orange,
+        VIOLET = C.magenta,
+        MAGENTA = C.purple,
         BLUE = C.blue,
         RED = C.red,
 
-        -- Extra catppuccin colors
-        SKY = C.sky,
-        LAVENDER = C.lavender,
-        FLAMINGO = C.flamingo,
-        ROSEWATER = C.rosewater,
-        MAROON = C.maroon,
+        -- Extra tokyonight colors
+        SKY = C.blue2,
+        LAVENDER = C.blue1,
+        FLAMINGO = C.magenta2,
+        ROSEWATER = C.red,
+        MAROON = C.red1,
 
         -- Surface colors
-        BASE = C.base,
-        MANTLE = C.mantle,
-        CRUST = C.crust,
-        SURFACE0 = C.surface0,
-        SURFACE1 = C.surface1,
-        SURFACE2 = C.surface2,
-        OVERLAY0 = C.overlay0,
-        OVERLAY1 = C.overlay1,
-        OVERLAY2 = C.overlay2,
-        SUBTEXT0 = C.subtext0,
-        SUBTEXT1 = C.subtext1,
-        TEXT = C.text,
+        BASE = C.black,
+        MANTLE = C.bg_dark,
+        CRUST = C.bg_dark1,
+        SURFACE0 = C.bg_dark,
+        SURFACE1 = C.bg_highlight,
+        SURFACE2 = C.terminal_black,
+        OVERLAY0 = C.comment,
+        OVERLAY1 = C.dark5,
+        OVERLAY2 = C.dark3,
+        SUBTEXT0 = C.fg_dark,
+        SUBTEXT1 = C.comment,
+        TEXT = C.fg,
     }
 end
 
